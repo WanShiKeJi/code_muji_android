@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="10dp"
+    android:gravity="right"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_chatmsg_rightdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:padding="2dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/chatmsg_date_shape"
+        android:layout_gravity="center_horizontal"
+        android:text="15/05/06 21:00"/>
+
+    <TextView
+        android:id="@+id/tv_chatmsg_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/messages_right_selector"
+        android:maxWidth="250dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:paddingLeft="15dp"
+        android:autoLink="email|phone|web"
+        android:gravity="center_vertical"
+        android:textSize="16sp"
+        android:lineSpacingExtra="5dp"
+        android:text="中国联通" />
+
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/messages_left9"   android:state_pressed="false"/>
+
+    <item android:drawable="@drawable/messages_left9sel" android:state_pressed="true"/>
+</selector><!-- From: file:/D:/code_muji_android/muji_android/res/drawable/messages_left_selector.xml -->
