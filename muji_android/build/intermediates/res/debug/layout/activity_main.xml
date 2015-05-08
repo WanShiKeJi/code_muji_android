@@ -1,0 +1,112 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <FrameLayout
+            android:id="@+id/tab_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/sd_keyboard"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <include
+                android:id="@+id/ll_keyboard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout="@layout/keyboard_popup" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_above="@+id/rgp"
+        android:background="@color/grey_phone" />
+
+    <RadioGroup
+        android:id="@+id/rgp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/button1"
+            style="@style/CustomRadio"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:checked="true"
+            android:drawableTop="@drawable/collapse_selector"
+            android:text="收起"
+            android:textColor="@drawable/tab_text_selector"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/rb_call"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
+            android:background="@drawable/call"
+            android:button="@null"
+            android:visibility="gone" />
+
+        <RadioButton
+            android:id="@+id/button2"
+            style="@style/CustomRadio"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/message_selector"
+            android:text="信息"
+            android:textColor="@drawable/tab_text_selector"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/button3"
+            style="@style/CustomRadio"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/contacts_selector"
+            android:text="通讯录"
+            android:textColor="@drawable/tab_text_selector"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/button4"
+            style="@style/CustomRadio"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/discovery_selector"
+            android:text="发现"
+            android:textColor="@drawable/tab_text_selector"
+            android:textSize="12sp" />
+    </RadioGroup>
+
+</LinearLayout><!-- From: file:/D:/code_muji_android/muji_android/res/layout/activity_main.xml -->

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#ffffff</color>
+    <color name="grey_phone">#A5A5A5</color>
+    <color name="header_normal">#ffe74c3c</color>
+    <color name="header_pressed">#ffc0392b</color>
+    <color name="menu_section_header">#FFDDDDDD</color>
+    <color name="bg_grey">#F0F0F6</color>
+    <color name="bg_progress">#0FBCAA</color>
+    <color name="red">#ff0000</color>
+    <color name="tab_text">#17BEAD</color>
+
+</resources>

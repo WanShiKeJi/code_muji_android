@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="sms_key">
+
+        <!-- 短信序号，如100 -->
+        <item>_id</item>
+        <!-- 对话的序号，如100，与同一个手机号互发的短信，其序号是相同的 -->
+        <item>thread_id</item>
+        <!-- 发件人地址，即手机号，如+8613811810000 -->
+        <item>address</item>
+        <!-- 日期，long型，如1256539465022，可以对日期显示格式进行设置 -->
+        <item>date</item>
+        <!-- 协议0SMS_RPOTO短信，1MMS_PROTO彩信 -->
+        <item>protocol</item>
+        <!-- 是否阅读0未读，1已读 -->
+        <item>read</item>
+        <!-- 短信状态-1接收，0complete,64pending,128failed -->
+        <item>status</item>
+        <!-- 短信类型1是接收到的，2是已发出 -->
+        <item>type</item>
+        <!-- 短信具体内容 -->
+        <item>body</item>
+    </string-array>
+
+</resources>

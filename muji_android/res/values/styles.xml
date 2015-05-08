@@ -1,0 +1,56 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    <!-- 主界面底部切换按钮样式 -->
+    <style name="CustomRadio">
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+    </style>
+
+    <!-- 键盘按钮样式 -->
+    <style name="style_image_keyboard">
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+    <!-- 键盘布局弹出和消失动画 -->
+    <style name="popwin_anim_style">
+        <item name="android:windowEnterAnimation">@anim/abc_slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/abc_slide_out_bottom</item>
+    </style>
+
+    <!--GIF动态图-->
+    <style name="Widget.GifMoviewView" parent="@android:style/Widget" />
+    
+    <!-- 自定义的SlidingDrawer -->
+    <declare-styleable name="SlidingDrawer">
+        <attr name="orientation">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+        <attr name="bottomOffset" format="dimension|reference" />
+        <attr name="topOffset" format="dimension|reference" />
+        <attr name="allowSingleTap" format="boolean" />
+        <attr name="animateOnClick" format="boolean" />
+        <attr name="handle" format="reference" />
+        <attr name="content" format="reference" />
+    </declare-styleable>
+
+</resources>
