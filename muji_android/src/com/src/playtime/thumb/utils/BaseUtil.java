@@ -11,6 +11,7 @@ import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.text.TextUtils;
 import android.util.Log;
 
+import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -155,5 +156,18 @@ public class BaseUtil {
         long lcc_time = Long.valueOf(cc_time);
         re_StrTime = sdf.format(new Date(lcc_time * 1000L));
         return re_StrTime;
+    }
+
+    /**
+     * 将字符串时间转化为date
+     * @param dateString
+     * @return
+     */
+    public static Date stringToDate(String dateString) {
+        ParsePosition position = new ParsePosition(0);
+        dateString = dateString.substring(0, 10);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy/MM/dd/  HH:mm");
+        Date dateValue = simpleDateFormat.parse(dateString, position);
+        return dateValue;
     }
 }

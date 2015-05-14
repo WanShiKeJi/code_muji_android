@@ -1,6 +1,8 @@
 package com.src.playtime.thumb;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -98,7 +100,13 @@ public class MainActivity extends BaseActivity {
 		initPopupwindow();
 		InitFragmentView();
 		ReadContactsData();
-		//getSmsFromPhone();
+//       new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+                getSmsFromPhone();
+//           }
+//       }).start();
+
 
 	}
 
@@ -305,6 +313,18 @@ public class MainActivity extends BaseActivity {
 			mApp.TempSmsDatas.add(SmsModel);
 
 		}
+
+        Collections.sort(mApp.TempSmsDatas, new Comparator<SmsModel>() {
+            @Override
+            public int compare(SmsModel lhs, SmsModel rhs) {
+                long log1 = Long.valueOf(lhs.getDate().substring(0, 10));
+                long log2 = Long.valueOf(rhs.getDate().substring(0, 10));
+                if (log1 - log2 >= 0) {
+                    return 1;
+                }
+                return -1;
+            }
+        });
 	}
 
 	/**

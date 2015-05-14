@@ -170,7 +170,7 @@ public class PhoneAdapter extends CAdapter<ContactModel> implements
                 String tel=Uri.encode("##21#");
                 Intent intent1 = new Intent(Intent.ACTION_CALL,Uri.parse("tel:"+tel));
                 mAct.startActivity(intent1);
-                //MuJiMethod.getInstance(mAct).callOut(context, model);
+                MuJiMethod.getInstance(mAct).callOut(context, model);
 			break;
 		case R.id.footer_rb_edit:
 			startSystemContacts(model);

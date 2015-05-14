@@ -1,13 +1,13 @@
 package com.src.playtime.thumb;
 
-import com.src.playtime.thumb.phone.CallPhoneActivity;
-
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.NotificationCompat;
@@ -15,8 +15,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.src.playtime.thumb.phone.CallPhoneActivity;
 
 public class BaseFragment extends Fragment implements OnClickListener {
 
@@ -24,6 +28,10 @@ public class BaseFragment extends Fragment implements OnClickListener {
 	protected Activity mAct;
 	/** Notification管理 */
 	public NotificationManager mNotificationManager;
+    /**配置拇机号码和邮箱的dialog*/
+    protected  AlertDialog mConfigDialog;
+    /**配置拇机号码和邮箱的view*/
+    protected View mConfigView;
 
 	@Override
 	public void onAttach(Activity activity) {
@@ -108,6 +116,98 @@ public class BaseFragment extends Fragment implements OnClickListener {
 		mNotificationManager.notify(100, mNotification);
 	}
 
+    /**
+     * 获取shared数据
+     * @param name
+     * @return
+     */
+    public SharedPreferences getSharedPreferences(String name){
+        SharedPreferences mShared=mAct.getSharedPreferences(name,Activity.MODE_PRIVATE);
+        return mShared;
+    }
+
+
+    /**
+     * 显示Dialog是否可以取消
+     *
+     * @param title
+     * @param message
+     * @param onOKClickListener
+     * @param isCancelAble
+     * @return
+     */
+    public AlertDialog showDialog(String title, String message,
+                                  DialogInterface.OnClickListener onOKClickListener,
+                                  boolean isCancelAble) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(mAct);
+        AlertDialog alertDialog = builder.setTitle(title).setMessage(message)
+                .setPositiveButton("取消", onOKClickListener)
+                .setCancelable(isCancelAble).create();
+        alertDialog.show();
+        return alertDialog;
+    }
+
+    /**
+     * 自定义监听事件和按钮名称
+     *
+     * @param title
+     *            标题
+     * @param message
+     *            内容
+     * @param posTitle
+     *            确认按钮，null则不添加
+     * @param onPosClickListener
+     * @param negTitle
+     *            取消按钮，null则不添加
+     * @param onNegClickListener
+     *
+     * @param isCanCancel
+     *            按back是否可以取消dialog
+     * @return
+     */
+    public AlertDialog showDialog(String title, String message,
+                                  String posTitle,
+                                  DialogInterface.OnClickListener onPosClickListener,
+                                  String negTitle,
+                                  DialogInterface.OnClickListener onNegClickListener,
+                                  boolean isCanCancel, boolean isSystemDialog) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(mAct);
+        builder.setMessage(message).setTitle(title);
+        if (posTitle != null) {
+            builder.setPositiveButton(posTitle, onPosClickListener);
+        }
+        if (negTitle != null) {
+            builder.setNegativeButton(negTitle, onNegClickListener);
+        }
+        builder.setCancelable(isCanCancel);
+        AlertDialog dialog = builder.create();
+        if (isSystemDialog) {
+            dialog.getWindow().setType(
+                    WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
+        }
+        dialog.show();
+        return dialog;
+    }
+
+    /**
+     * 显示一个配置拇机号码和邮箱的dialog
+     *
+     * @return
+     */
+    public View showConfigDialog(String email,String phone) {
+        mConfigView=LayoutInflater.from(mAct).inflate(R.layout.dialog_config,null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(mAct);
+        mConfigDialog = builder.setView(mConfigView).create();
+        mConfigView.findViewById(R.id.tv_config_cancel).setOnClickListener(this);
+        mConfigView.findViewById(R.id.tv_config_confirm).setOnClickListener(this);
+        EditText mEmail= (EditText) mConfigView.findViewById(R.id.ed_config_email);
+        EditText mPhone= (EditText) mConfigView.findViewById(R.id.ed_config_phone);
+        mEmail.setText(email);
+        mPhone.setText(phone);
+        mConfigDialog.show();
+        return mConfigView;
+    }
+
 	@Override
 	public void onStart() {
 		// TODO Auto-generated method stub
@@ -152,7 +252,32 @@ public class BaseFragment extends Fragment implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-
+        switch (v.getId()){
+            case R.id.tv_config_confirm:
+                putConfigShared();
+                break;
+            case R.id.tv_config_cancel:
+                mConfigDialog.dismiss();
+                break;
+        }
 	}
+
+    public  void  putConfigShared(){
+        EditText mEmail= (EditText) mConfigView.findViewById(R.id.ed_config_email);
+        EditText mPhone= (EditText) mConfigView.findViewById(R.id.ed_config_phone);
+        String email=mEmail.getText().toString().trim();
+        String phone=mPhone.getText().toString().trim();
+        SharedPreferences mShare=this.getSharedPreferences("muji");
+        SharedPreferences.Editor mEditor=mShare.edit();
+        if(email.equals("")||phone.equals("")){
+            showToast("请把信息填写完整！");
+        return;
+        }
+        mEditor.putString("email",email);
+        mEditor.putString("phone",phone);
+        mEditor.commit();
+
+        mConfigDialog.dismiss();
+    }
 
 }

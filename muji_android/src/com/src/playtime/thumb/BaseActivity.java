@@ -1,9 +1,8 @@
 package com.src.playtime.thumb;
 
-import com.src.playtime.thumb.phone.CallPhoneActivity;
-
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -11,9 +10,11 @@ import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NotificationCompat;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -21,6 +22,11 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.src.playtime.thumb.phone.CallPhoneActivity;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 
@@ -37,6 +43,8 @@ public class BaseActivity extends FragmentActivity implements OnClickListener {
 	public NotificationManager mNotificationManager;
 
 	public Notification mNotification;
+
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +98,18 @@ public class BaseActivity extends FragmentActivity implements OnClickListener {
 		mNotificationManager.cancelAll();// 删除你发的所有通知
 	}
 
+
+
+    /**
+     * 获取shared数据
+     * @param name
+     * @return
+     */
+    public SharedPreferences getSharedPreferences(String name){
+        SharedPreferences mShared=getSharedPreferences(name,Activity.MODE_PRIVATE);
+        return mShared;
+    }
+
 	/**
 	 * 初始化ActionBar
 	 * 
@@ -133,26 +153,6 @@ public class BaseActivity extends FragmentActivity implements OnClickListener {
 		return tv;
 	}
 
-	// protected TextView initActionBarWithBack(String title) {
-	// ActionBar mActionBar = initActionBar(R.layout.header_back);
-	// TextView tv = (TextView) mActionBar.getCustomView().findViewById(
-	// R.id.tvTitle);
-	// tv.setText(title);
-	// findViewById(R.id.ibBack).setOnClickListener(mAct);
-	// return tv;
-	// }
-
-	// protected TextView[] initActionBar3TextView(String title) {
-	// ActionBar mActionBar = initActionBar(R.layout.header_3textview);
-	// TextView tv1 = (TextView) findViewById(R.id.tvLeft);
-	// tv1.setOnClickListener(mAct);
-	// TextView tv2 = (TextView) mActionBar.getCustomView().findViewById(
-	// R.id.tvTitle);
-	// tv2.setText(title);
-	// TextView tv3 = (TextView) mActionBar.getCustomView().findViewById(
-	// R.id.tvRight);
-	// return new TextView[] { tv1, tv2, tv3 };
-	// }
 
 	/****************** Dialog Start ********************/
 	public ProgressDialog showProgressDialog(String message) {
@@ -239,19 +239,6 @@ public class BaseActivity extends FragmentActivity implements OnClickListener {
 				Toast.LENGTH_SHORT).show();
 	}
 
-	// /**
-	// * 描述：在线程中提示文本信息.
-	// *
-	// * @param resId
-	// * 要提示的字符串资源ID，消息what值为0,
-	// */
-	// public void showToastInThread(int resId) {
-	// // Message msg = baseHandler.obtainMessage(0);
-	// // Bundle bundle = new Bundle();
-	// // bundle.putString("Msg", this.getResources().getString(resId));
-	// // msg.setData(bundle);
-	// // baseHandler.sendMessage(msg);
-	// }
 
 	/**
 	 * 描述：在线程中提示文本信息.
@@ -286,6 +273,8 @@ public class BaseActivity extends FragmentActivity implements OnClickListener {
 		dialog.show();
 		return dialog;
 	}
+
+
 
 	/**
 	 * 显示Dialog是否可以取消

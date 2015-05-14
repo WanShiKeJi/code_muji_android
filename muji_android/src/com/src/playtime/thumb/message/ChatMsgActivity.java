@@ -1,14 +1,20 @@
 package com.src.playtime.thumb.message;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
+import android.widget.AdapterView;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -22,9 +28,11 @@ import com.src.playtime.thumb.R;
 import com.src.playtime.thumb.baseadapter.MultiItemTypeSupport;
 import com.src.playtime.thumb.bean.ContactModel;
 import com.src.playtime.thumb.bean.SmsModel;
+import com.src.playtime.thumb.utils.BaseUtil;
 import com.src.playtime.thumb.utils.MuJiMethod;
+import com.src.playtime.thumb.widget.swipeback.SwipeBackActivity;
 
-public class ChatMsgActivity extends BaseActivity {
+public class ChatMsgActivity extends SwipeBackActivity{
 
 	@ViewInject(R.id.lv_chatmsg_list)
 	private ListView mListView;
@@ -51,7 +59,6 @@ public class ChatMsgActivity extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_chatmsg);
 		ViewUtils.inject(mAct);
 		init();
@@ -85,6 +92,7 @@ public class ChatMsgActivity extends BaseActivity {
 		mTvTel.setText(tel);
 		mAdapter = new ChatMsgAdapter(mAct, mData, mMultiItemTypeSupport);
 		mListView.setAdapter(mAdapter);
+        mListView.setOnItemLongClickListener(mOnItemLong);
 		int totalHeight = 0;
 		int listHeight = mApp.screenheight - mTvSend.getHeight()
 				- mLlHeader.getHeight();
@@ -129,6 +137,31 @@ public class ChatMsgActivity extends BaseActivity {
 		}
 	}
 
+    AdapterView.OnItemLongClickListener mOnItemLong=new AdapterView.OnItemLongClickListener() {
+        @Override
+        public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+           for (int i = 0; i <mAdapter.getAllListChildCount() ; i++) {
+                ViewGroup tempGroup=mAdapter.getAllListChildView().get(i);
+                //temp.setVisibility(View.GONE);
+//               ViewGroup temp=(ViewGroup)parent.getParent();
+//               View v=temp.getChildAt(i);
+//               if(temp==null){
+//                   showToast("null");
+//               }
+//                ViewGroup g = (ViewGroup)temp.getParent();
+               CheckBox mCkBox= (CheckBox) tempGroup.findViewById(R.id.cb_chatmsg);
+               mCkBox.setVisibility(View.VISIBLE);
+               mAdapter.setAllChildCheckBox(true);
+
+            }
+            return false;
+        }
+    };
+
+
+    /**
+     * 不同布局管理
+     */
 	MultiItemTypeSupport<SmsModel> mMultiItemTypeSupport = new MultiItemTypeSupport<SmsModel>() {
 
 		@Override
