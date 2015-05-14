@@ -16,8 +16,15 @@
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:windowBackground">@drawable/call_phone_bg</item>
+        <item name="android:windowNoTitle">true</item>
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+
+    <style name="AppThemeIsTranslucent" parent="AppBaseTheme">
+       <item name="android:windowIsTranslucent">true</item>
+    </style>
+    
     <!-- 主界面底部切换按钮样式 -->
     <style name="CustomRadio">
         <item name="android:gravity">center</item>
@@ -52,5 +59,11 @@
         <attr name="handle" format="reference" />
         <attr name="content" format="reference" />
     </declare-styleable>
+
+
+    <style name="SwipeBackLayout">
+        <item name="edge_size">50dip</item>
+        <item name="shadow_left">@drawable/shadow_left</item>
+    </style>
 
 </resources>

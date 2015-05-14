@@ -8,5 +8,6 @@
     <string name="is_oppen_true">true</string>
     <string name="discover_version">版本信息</string>
     <string name="discover_mydevice">我的设备</string>
+    <string name="discover_configure">配置信息</string>
 
 </resources>

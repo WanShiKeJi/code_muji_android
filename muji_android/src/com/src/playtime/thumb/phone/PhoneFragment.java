@@ -8,7 +8,9 @@ import java.util.List;
 
 import org.litepal.crud.DataSupport;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.database.Cursor;
 import android.graphics.Color;
@@ -78,7 +80,7 @@ public class PhoneFragment extends BaseFragment {
 		view = inflater.inflate(R.layout.fragment_phone, null);
 		ViewUtils.inject(this, view);
 		// 设置标题
-		setBarTitle(view, "电话");
+		setBarTitle(view, "电话",R.drawable.icon_call_change);
 		initData();
 		return view;
 	}
@@ -171,7 +173,68 @@ public class PhoneFragment extends BaseFragment {
 		});
 	}
 
-	@Override
+
+    @Override
+    public void onClick(View v) {
+        super.onClick(v);
+        switch(v.getId()){
+            case R.id.header_right:
+                isConfigDialog();
+                break;
+            case R.id.tv_config_confirm:
+                isConfigDialog();
+                break;
+        }
+    }
+
+    public void isConfigDialog(){
+        String email=getSharedPreferences("muji").getString("email","");
+        final String phone=getSharedPreferences("muji").getString("phone","");
+        if(email.equals("")||phone.equals("")){
+            showConfigDialog(email,phone);
+        }else{
+            String title="";
+            if(this.getSharedPreferences("muji").getBoolean("isTransfer",false)){
+                title="到拇机"+phone+"的呼转取消?";
+            }else{
+                title="手机呼转到拇机"+phone+"?";
+            }
+            showDialog("",title,"是",new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    callTransfer(phone);
+                }
+            },"否",new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            },true,false);
+        }
+
+    }
+
+
+    public void callTransfer(String phone){
+        SharedPreferences mShare=this.getSharedPreferences("muji");
+        boolean bool=mShare.getBoolean("isTransfer",false);
+        Intent intent;
+        SharedPreferences.Editor mEditor=mShare.edit();
+        if(bool){
+            String tel=Uri.encode(mApp.mStrPrefix[1]);
+            intent = new Intent(Intent.ACTION_CALL,Uri.parse("tel:"+tel));
+            mEditor.putBoolean("isTransfer",false);
+        }else{
+            String tel=Uri.encode(mApp.mStrPrefix[0]+phone+"#");
+            intent = new Intent(Intent.ACTION_CALL,Uri.parse("tel:"+tel));
+            mEditor.putBoolean("isTransfer",true);
+        }
+        mEditor.commit();
+        mAct.startActivity(intent);
+    }
+
+
+    @Override
 	public void onResume() {
 		super.onResume();
 		mAdapter.refresh(mApp.mTelRecordDatas, "");

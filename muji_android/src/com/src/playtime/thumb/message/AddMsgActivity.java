@@ -29,11 +29,12 @@ import com.src.playtime.thumb.baseadapter.MultiItemTypeSupport;
 import com.src.playtime.thumb.bean.ContactModel;
 import com.src.playtime.thumb.bean.SmsModel;
 import com.src.playtime.thumb.utils.PinyinSearch;
+import com.src.playtime.thumb.widget.swipeback.SwipeBackActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddMsgActivity extends BaseActivity implements TextWatcher{
+public class AddMsgActivity extends SwipeBackActivity implements TextWatcher{
 
 //    /**取消按钮*/
 //    @ViewInject(R.id.tv_addmsg_cancel)
@@ -70,7 +71,6 @@ public class AddMsgActivity extends BaseActivity implements TextWatcher{
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_addmsg);
 		ViewUtils.inject(mAct);
         init();
@@ -122,6 +122,7 @@ public class AddMsgActivity extends BaseActivity implements TextWatcher{
                 temp.setBody(mEdMsg.getText().toString());
 //                temp.setName(mTvName.getText().toString());
 //                temp.setAddress(mTvName.getText().toString());
+                temp.setDate(System.currentTimeMillis()+"");
                 temp.setType("0");
                 mData.add(temp);
                 mAdapter.refresh(mData, "");

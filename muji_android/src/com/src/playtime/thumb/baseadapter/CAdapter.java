@@ -1,5 +1,6 @@
 package com.src.playtime.thumb.baseadapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
@@ -21,6 +22,8 @@ public abstract class CAdapter<T> extends BaseAdapter {
 	protected String inspection = "";
 
 	protected MultiItemTypeSupport<T> mMultiItemSupport;
+
+    protected List<ViewGroup> mAllChildView;
 
 	/**
 	 * 
