@@ -8,9 +8,11 @@ import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.NotificationCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,6 +22,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.avos.avoscloud.AVException;
+import com.avos.avoscloud.AVUser;
+import com.avos.avoscloud.SignUpCallback;
 import com.src.playtime.thumb.phone.CallPhoneActivity;
 
 public class BaseFragment extends Fragment implements OnClickListener {
@@ -265,19 +270,59 @@ public class BaseFragment extends Fragment implements OnClickListener {
     public  void  putConfigShared(){
         EditText mEmail= (EditText) mConfigView.findViewById(R.id.ed_config_email);
         EditText mPhone= (EditText) mConfigView.findViewById(R.id.ed_config_phone);
-        String email=mEmail.getText().toString().trim();
-        String phone=mPhone.getText().toString().trim();
+        EditText mPass= (EditText) mConfigView.findViewById(R.id.ed_config_password);
+        final String email=mEmail.getText().toString().trim();
+        final String phone=mPhone.getText().toString().trim();
+        final String password=mPass.getText().toString().trim();
         SharedPreferences mShare=this.getSharedPreferences("muji");
-        SharedPreferences.Editor mEditor=mShare.edit();
+        final SharedPreferences.Editor mEditor=mShare.edit();
         if(email.equals("")||phone.equals("")){
             showToast("请把信息填写完整！");
         return;
         }
-        mEditor.putString("email",email);
-        mEditor.putString("phone",phone);
-        mEditor.commit();
+        AVUser avUser=new AVUser();
+        avUser.setUsername(email);
+        avUser.setPassword(password);
+        avUser.setEmail(email);
+        avUser.put("mujiphone",phone);
+        avUser.signUpInBackground(new SignUpCallback() {
+            @Override
+            public void done(AVException e) {
+                if (e==null){
+                    //注册成功
+                    mEditor.putString("email",email);
+                    mEditor.putString("phone",phone);
+                    mEditor.putString("password",password);
+                    mEditor.commit();
+                    mConfigDialog.dismiss();
+                    callTransfer(phone);
+                }else{
+                    if(e.getCode()==203){
+                        showToast("该邮箱已被注册!");
+                    }
+                }
+            }
+        });
 
-        mConfigDialog.dismiss();
+
+    }
+
+    public void callTransfer(String phone){
+        SharedPreferences mShare=this.getSharedPreferences("muji");
+        boolean bool=mShare.getBoolean("isTransfer",false);
+        Intent intent;
+        SharedPreferences.Editor mEditor=mShare.edit();
+        if(bool){
+            String tel= Uri.encode(mApp.mStrPrefix[1]);
+            intent = new Intent(Intent.ACTION_CALL,Uri.parse("tel:"+tel));
+            mEditor.putBoolean("isTransfer",false);
+        }else{
+            String tel=Uri.encode(mApp.mStrPrefix[0]+phone+"#");
+            intent = new Intent(Intent.ACTION_CALL,Uri.parse("tel:"+tel));
+            mEditor.putBoolean("isTransfer",true);
+        }
+        mEditor.commit();
+        mAct.startActivity(intent);
     }
 
 }

@@ -87,7 +87,7 @@ public class BaseActivity extends FragmentActivity implements OnClickListener {
 		// mNotification.setLatestEventInfo(this, "常驻测试",
 		// "使用cancel()方法才可以把我去掉哦", null); //设置详细的信息 ,这个方法现在已经不用了
 		mNotificationManager.notify(100, mNotification);
-
+        showToast("zhixing------notification");
 		return mBuilder;
 	}
 

@@ -64,6 +64,7 @@ public class CallPhoneActivity extends BaseActivity implements Runnable {
     // 是否一直循环
     private boolean isRun = true;
 
+    /**时间*/
     private long mBase;
 
     private StringBuilder mRecycle = new StringBuilder(8);
@@ -98,7 +99,7 @@ public class CallPhoneActivity extends BaseActivity implements Runnable {
             mTvPhone.setText(mContatct.getTelnum());
         }
         if (getIntent().getBooleanExtra("isShowNotifi", false)) {
-            mBuilder = mAct.showCzNotify();
+            mBuilder = showCzNotify();
             mThread = new Thread(this);
             mThread.start();
         }
@@ -134,9 +135,9 @@ public class CallPhoneActivity extends BaseActivity implements Runnable {
     }
 
     protected void onNewIntent(Intent intent) {
-
         super.onNewIntent(intent);
         setIntent(intent);
+        showToast("zhixing------");
     }
 
     @Override

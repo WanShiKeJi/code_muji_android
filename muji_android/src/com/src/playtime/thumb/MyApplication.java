@@ -13,6 +13,7 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.WindowManager;
 
+import com.avos.avoscloud.AVOSCloud;
 import com.src.playtime.thumb.bean.ContactModel;
 import com.src.playtime.thumb.bean.SmsModel;
 import com.src.playtime.thumb.utils.MuJiMethod;
@@ -36,11 +37,16 @@ public class MyApplication extends LitePalApplication {
     public List<String[]> mSimPrefix;
     //当前手机运营商呼叫转移的前缀
     public String[] mStrPrefix=new String[2];
+    //leancloud配置信息
+    String AppID="85m0pvb0vv1iluti5sk0xsou1mkftzn06a3f1ompvza9xc7z";
+    String AppKey="orluh89ufnpvl773b68w5gcdk4dxfrahzwaahz7c46ettn44";
+
 
 	@Override
 	public void onCreate() {
 		// TODO Auto-generated method stub
 		super.onCreate();
+        AVOSCloud.initialize(this, AppID, AppKey);
 		init();
         SimOperator();
 	}
