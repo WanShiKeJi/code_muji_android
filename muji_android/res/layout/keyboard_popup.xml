@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="300dp"
+    android:layout_height="250dp"
     android:background="@color/white"
     android:gravity="bottom"
     android:orientation="vertical" >
@@ -12,7 +12,7 @@
         android:background="#E3E3E3"
         android:gravity="center"
         android:orientation="horizontal"
-        android:padding="10dp" >
+        android:padding="5dp" >
 
         <EditText
             android:id="@+id/edit_search"
@@ -22,8 +22,8 @@
             android:background="@drawable/keyboard_edit_bg"
             android:hint="请输入号码或拼音搜索"
             android:inputType="none"
-            android:padding="10dp"
-            android:textSize="20dp" />
+            android:padding="5dp"
+            android:textSize="18sp" />
 
         <ImageView
             android:id="@+id/ibtn_key_del"
@@ -46,17 +46,20 @@
             <ImageButton
                 android:id="@+id/ibtn_key_1"
                 style="@style/style_image_keyboard"
-                android:background="@drawable/bg_key1_selector" />
+                android:background="@android:color/transparent"
+                android:src="@drawable/bg_key1_selector" />
 
             <ImageButton
                 android:id="@+id/ibtn_key_2"
                 style="@style/style_image_keyboard"
-                android:background="@drawable/bg_key2_selector" />
+                android:src="@drawable/bg_key2_selector"
+                android:background="@android:color/transparent" />
 
             <ImageButton
                 android:id="@+id/ibtn_key_3"
                 style="@style/style_image_keyboard"
-                android:background="@drawable/bg_key3_selector" />
+                android:src="@drawable/bg_key3_selector"
+                android:background="@android:color/transparent" />
         </TableRow>
 
         <TableRow
@@ -67,17 +70,20 @@
             <ImageButton
                 android:id="@+id/ibtn_key_4"
                 style="@style/style_image_keyboard"
-                android:background="@drawable/bg_key4_selector" />
+                android:src="@drawable/bg_key4_selector"
+                android:background="@android:color/transparent" />
 
             <ImageButton
                 android:id="@+id/ibtn_key_5"
                 style="@style/style_image_keyboard"
-                android:background="@drawable/bg_key5_selector" />
+                android:src="@drawable/bg_key5_selector"
+                android:background="@android:color/transparent"/>
 
             <ImageButton
                 android:id="@+id/ibtn_key_6"
                 style="@style/style_image_keyboard"
-                android:background="@drawable/bg_key6_selector" />
+                android:src="@drawable/bg_key6_selector"
+                android:background="@android:color/transparent" />
         </TableRow>
 
         <TableRow
@@ -88,17 +94,20 @@
             <ImageButton
                 android:id="@+id/ibtn_key_7"
                 style="@style/style_image_keyboard"
-                android:background="@drawable/bg_key7_selector" />
+                android:src="@drawable/bg_key7_selector"
+                android:background="@android:color/transparent" />
 
             <ImageButton
                 android:id="@+id/ibtn_key_8"
                 style="@style/style_image_keyboard"
-                android:background="@drawable/bg_key8_selector" />
+                android:src="@drawable/bg_key8_selector"
+                android:background="@android:color/transparent" />
 
             <ImageButton
                 android:id="@+id/ibtn_key_9"
                 style="@style/style_image_keyboard"
-                android:background="@drawable/bg_key9_selector" />
+                android:src="@drawable/bg_key9_selector"
+                android:background="@android:color/transparent"/>
         </TableRow>
 
         <TableRow
@@ -109,17 +118,20 @@
             <ImageButton
                 android:id="@+id/ibtn_key_l"
                 style="@style/style_image_keyboard"
-                android:background="@drawable/bg_keyxing_selector" />
+                android:background="@android:color/transparent"
+                android:src="@drawable/bg_keyxing_selector" />
 
             <ImageButton
                 android:id="@+id/ibtn_key_0"
                 style="@style/style_image_keyboard"
-                android:background="@drawable/bg_key0_selector" />
+                android:src="@drawable/bg_key0_selector"
+                android:background="@android:color/transparent" />
 
             <ImageButton
                 android:id="@+id/ibtn_key_r"
                 style="@style/style_image_keyboard"
-                android:background="@drawable/bg_keyjing_selector" />
+                android:background="@android:color/transparent"
+                android:src="@drawable/bg_keyjing_selector" />
         </TableRow>
     </TableLayout>
 

@@ -297,6 +297,7 @@ public class BaseFragment extends Fragment implements OnClickListener {
                     mConfigDialog.dismiss();
                     callTransfer(phone);
                 }else{
+                    Log.e("message----","---"+e.getMessage());
                     if(e.getCode()==203){
                         showToast("该邮箱已被注册!");
                     }

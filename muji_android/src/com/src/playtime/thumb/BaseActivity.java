@@ -98,8 +98,6 @@ public class BaseActivity extends FragmentActivity implements OnClickListener {
 		mNotificationManager.cancelAll();// 删除你发的所有通知
 	}
 
-
-
     /**
      * 获取shared数据
      * @param name
