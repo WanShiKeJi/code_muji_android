@@ -141,14 +141,7 @@ public class ChatMsgActivity extends SwipeBackActivity{
         @Override
         public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
            for (int i = 0; i <mAdapter.getAllListChildCount() ; i++) {
-                ViewGroup tempGroup=mAdapter.getAllListChildView().get(i);
-                //temp.setVisibility(View.GONE);
-//               ViewGroup temp=(ViewGroup)parent.getParent();
-//               View v=temp.getChildAt(i);
-//               if(temp==null){
-//                   showToast("null");
-//               }
-//                ViewGroup g = (ViewGroup)temp.getParent();
+               ViewGroup tempGroup=mAdapter.getAllListChildView().get(i);
                CheckBox mCkBox= (CheckBox) tempGroup.findViewById(R.id.cb_chatmsg);
                mCkBox.setVisibility(View.VISIBLE);
                mAdapter.setAllChildCheckBox(true);

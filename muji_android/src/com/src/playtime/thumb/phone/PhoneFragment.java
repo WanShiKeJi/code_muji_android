@@ -181,9 +181,9 @@ public class PhoneFragment extends BaseFragment {
             case R.id.header_right:
                 isConfigDialog();
                 break;
-            case R.id.tv_config_confirm:
-                isConfigDialog();
-                break;
+//            case R.id.tv_config_confirm:
+//                isConfigDialog();
+//                break;
         }
     }
 
@@ -215,23 +215,7 @@ public class PhoneFragment extends BaseFragment {
     }
 
 
-    public void callTransfer(String phone){
-        SharedPreferences mShare=this.getSharedPreferences("muji");
-        boolean bool=mShare.getBoolean("isTransfer",false);
-        Intent intent;
-        SharedPreferences.Editor mEditor=mShare.edit();
-        if(bool){
-            String tel=Uri.encode(mApp.mStrPrefix[1]);
-            intent = new Intent(Intent.ACTION_CALL,Uri.parse("tel:"+tel));
-            mEditor.putBoolean("isTransfer",false);
-        }else{
-            String tel=Uri.encode(mApp.mStrPrefix[0]+phone+"#");
-            intent = new Intent(Intent.ACTION_CALL,Uri.parse("tel:"+tel));
-            mEditor.putBoolean("isTransfer",true);
-        }
-        mEditor.commit();
-        mAct.startActivity(intent);
-    }
+
 
 
     @Override
