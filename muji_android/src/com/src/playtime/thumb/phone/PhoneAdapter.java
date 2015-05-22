@@ -118,7 +118,7 @@ public class PhoneAdapter extends CAdapter<ContactModel> implements
 				|| model.getName().charAt(0) >= 'A'
 				&& model.getName().charAt(0) <= 'Z') {
 			// 把名字赋值给临时字符串
-			String tempName = model.getPyname().replaceAll("\\*","\\\\\\*");
+			String tempName = model.getPyname();
 			// 匹配到的字符串
 			String s = "";
 			// 开始循环查找
@@ -135,6 +135,7 @@ public class PhoneAdapter extends CAdapter<ContactModel> implements
 				}
 
 			}
+            s=s.replaceAll("\\*","\\\\\\*");
 			// 把匹配好的字符串带进去和拼音名字匹配
 			Pattern pattern = Pattern.compile(s);
 			Matcher matcher = pattern.matcher(Pyname);
