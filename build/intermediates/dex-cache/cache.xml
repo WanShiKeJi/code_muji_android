@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\code_muji_android\muji_android\libs\android-support-v4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a9589eff307e4d602454cd132595cefd08142eda">
+        <dex dex="D:\code_muji_android\muji_android\build\intermediates\pre-dexed\debug\android-support-v4-b5dfd2b9cdaf17904f43c2b6ba1cf8cff113c7f4.jar" />
+    </item>
+    <item
+        jar="D:\AndroidStudioSDK\extras\android\m2repository\com\android\support\support-annotations\22.1.0\support-annotations-22.1.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="281bc6c58ecb3644c23fbc5ee0452019f67b4d5d">
+        <dex dex="D:\code_muji_android\testleanclound\build\intermediates\pre-dexed\debug\support-annotations-22.1.0-115cbb70711e654fbd918e6fb10acab0080c65c1.jar" />
+    </item>
+    <item
+        jar="D:\code_muji_android\muji_android\libs\litepal-1.1.1-src.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6c0d23afb4e9efbc21ba3e5d17cab5aa3430797e">
+        <dex dex="D:\code_muji_android\muji_android\build\intermediates\pre-dexed\debug\litepal-1.1.1-src-34f33beabbca6e67e0ee1de15c31ec69e7412b17.jar" />
+    </item>
+    <item
+        jar="D:\code_muji_android\testleanclound\libs\BmobSDK_V3.3.7_0513.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a3343eec8df340eff3df18d655ca0a0d09cc8d4d">
+        <dex dex="D:\code_muji_android\testleanclound\build\intermediates\pre-dexed\debug\BmobSDK_V3.3.7_0513-1dffae73a342b22ed120b2c6251c8c94b22b808d.jar" />
+    </item>
+    <item
+        jar="D:\code_muji_android\muji_android\libs\swipemenulistview.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="54a79b0146dbca57f5fb569b1b6be4dab8254f78">
+        <dex dex="D:\code_muji_android\muji_android\build\intermediates\pre-dexed\debug\swipemenulistview-daca5729fb3144751af0c7ff7a0507c307b887fe.jar" />
+    </item>
+    <item
+        jar="D:\code_muji_android\muji_android\libs\pinyin4j-2.5.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ae353005f973da1cd8545b54354504c2503f6865">
+        <dex dex="D:\code_muji_android\muji_android\build\intermediates\pre-dexed\debug\pinyin4j-2.5.0-1087b066a542e57d41e41a75b8b6315bc55b13c3.jar" />
+    </item>
+    <item
+        jar="D:\code_muji_android\muji_android\libs\xUtils-2.5.5.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d7b27a19b6f7ed3d26d9157147545c94ea8ee535">
+        <dex dex="D:\code_muji_android\muji_android\build\intermediates\pre-dexed\debug\xUtils-2.5.5-7ddbdb5b33daaeb4cf277a843d09de787a9f1b30.jar" />
+    </item>
+    <item
+        jar="D:\code_muji_android\muji_android\libs\avoscloud-sdk-v3.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="088e769cb6fafa1d9c201a9b9574c2142a695d6b">
+        <dex dex="D:\code_muji_android\muji_android\build\intermediates\pre-dexed\debug\avoscloud-sdk-v3.2-cdc05bef3fe87fd76362ff791d0c1c933bed4fd4.jar" />
+    </item>
+    <item
+        jar="D:\code_muji_android\muji_android\libs\httpmime-4.2.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="dba4d4d224e2ca872af5be8d2992777583145478">
+        <dex dex="D:\code_muji_android\muji_android\build\intermediates\pre-dexed\debug\httpmime-4.2.4-5feb507b59fd1db02a58cad7a6a4f7132e8bf945.jar" />
+    </item>
+    <item
+        jar="D:\code_muji_android\muji_android\libs\android-async-http-1.4.6.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a845a88238be0b5be9d238652c1bc0605ef91f52">
+        <dex dex="D:\code_muji_android\muji_android\build\intermediates\pre-dexed\debug\android-async-http-1.4.6-34c5d7f33fb883582220e81f9682a377321f2874.jar" />
+    </item>
+    <item
+        jar="D:\code_muji_android\testleanclound\libs\avoscloud-sdk-v3.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="088e769cb6fafa1d9c201a9b9574c2142a695d6b">
+        <dex dex="D:\code_muji_android\testleanclound\build\intermediates\pre-dexed\debug\avoscloud-sdk-v3.2-88fa549bd69bad5c13c6b74a020c43d8cc8c834c.jar" />
+    </item>
+    <item
+        jar="D:\code_muji_android\muji_android\build\intermediates\exploded-aar\code_muji_android\slidelibrary\unspecified\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="33f83c77d466eada071678cf79c766915a0e8d09">
+        <dex dex="D:\code_muji_android\muji_android\build\intermediates\pre-dexed\debug\classes-141599a64ebcd659620dee744c95a142353cbb89.jar" />
+    </item>
+    <item
+        jar="D:\code_muji_android\testleanclound\libs\fastjson.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d449ce9b6023c059db09be5170229162a77e007a">
+        <dex dex="D:\code_muji_android\testleanclound\build\intermediates\pre-dexed\debug\fastjson-25a2970e01b2600f5be4720a3b17377b655834c2.jar" />
+    </item>
+    <item
+        jar="D:\code_muji_android\muji_android\libs\fastjson.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d449ce9b6023c059db09be5170229162a77e007a">
+        <dex dex="D:\code_muji_android\muji_android\build\intermediates\pre-dexed\debug\fastjson-4e2ec06bc039bf8929d781f7d77236bf3b3c47d9.jar" />
+    </item>
+    <item
+        jar="D:\code_muji_android\testleanclound\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.1.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="983e2f375504bc04def18e709c35192afe92e65f">
+        <dex dex="D:\code_muji_android\testleanclound\build\intermediates\pre-dexed\debug\classes-4b924fdb4cc8821c2c294d6612495cde9071707a.jar" />
+    </item>
+    <item
+        jar="D:\code_muji_android\testleanclound\libs\android-async-http-1.4.6.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a845a88238be0b5be9d238652c1bc0605ef91f52">
+        <dex dex="D:\code_muji_android\testleanclound\build\intermediates\pre-dexed\debug\android-async-http-1.4.6-894d4ce1cbb2fa8db245a8b6e40b4a91873e2866.jar" />
+    </item>
+    <item
+        jar="D:\code_muji_android\testleanclound\libs\httpmime-4.2.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="dba4d4d224e2ca872af5be8d2992777583145478">
+        <dex dex="D:\code_muji_android\testleanclound\build\intermediates\pre-dexed\debug\httpmime-4.2.4-c8620158dcb2f8afe9573621a0837e9a3e540d16.jar" />
+    </item>
+    <item
+        jar="D:\code_muji_android\testleanclound\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.0\libs\internal_impl-22.1.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="025cb89f2896c63200ff4c2e6c467a95691d880a">
+        <dex dex="D:\code_muji_android\testleanclound\build\intermediates\pre-dexed\debug\internal_impl-22.1.0-d6eb7ea049ce85d992f12d958408aed950f23f77.jar" />
+    </item>
+    <item
+        jar="D:\code_muji_android\testleanclound\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.0\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="eeebabdfd8203f6ab639ccea4ffa1f20e1adee3a">
+        <dex dex="D:\code_muji_android\testleanclound\build\intermediates\pre-dexed\debug\classes-bb6ff4db90375ddd2288625482a487d67a431721.jar" />
+    </item>
+    <item
+        jar="D:\code_muji_android\muji_android\libs\andbase.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="710cbd13d58e5bdf0243258cf436c0cc292740a1">
+        <dex dex="D:\code_muji_android\muji_android\build\intermediates\pre-dexed\debug\andbase-6e7263120815c0ab7daf0cd34188f37e2037aa17.jar" />
+    </item>
+
+</items>

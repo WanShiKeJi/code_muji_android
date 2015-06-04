@@ -12,25 +12,35 @@
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:padding="2dp"
+        android:layout_marginLeft="80dp"
         android:layout_marginBottom="10dp"
+        android:textSize="12sp"
         android:background="@drawable/chatmsg_date_shape"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="left"
         android:text="15/05/06 21:00"/>
 
-
-    <TextView
-        android:id="@+id/tv_chatmsg_left"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/messages_left_selector"
-        android:maxWidth="250dp"
-        android:textSize="16sp"
-        android:autoLink="email|phone|web"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        android:paddingRight="15dp"
-        android:lineSpacingExtra="5dp"
-        android:gravity="center_vertical"
-        android:text="中国联通" />
+        android:orientation="horizontal"
+       >
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/message_check_selector"
+            android:id="@+id/cb_chatmsg" />
+
+        <TextView
+            android:id="@+id/tv_chatmsg_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/messages_left_selector"
+            android:textSize="16sp"
+            android:maxWidth="250dp"
+            android:autoLink="email|phone|web"
+            android:lineSpacingExtra="5dp"
+            android:text="中" />
+    </LinearLayout>
 
 </LinearLayout><!-- From: file:/D:/code_muji_android/muji_android/res/layout/chatmsg_left.xml -->

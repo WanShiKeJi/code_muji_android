@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.src.playtime.thumb.widget.MySlideLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F0F0F6"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/header_list_first"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|left"
+        android:layout_marginLeft="8dp"
+        android:padding="5dp"
+        android:textColor="#808080"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#DEDEE4" />
+
+</com.src.playtime.thumb.widget.MySlideLinearLayout><!-- From: file:/D:/code_muji_android/muji_android/res/layout/header.xml -->

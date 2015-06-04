@@ -1,0 +1,3 @@
+include ':slidelibrary', ':code_muji_android', ':testleanclound'
+include ':muji_android'
+project(':code_muji_android').projectDir = new File('muji_android')

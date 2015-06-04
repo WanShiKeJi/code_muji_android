@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/code_muji_android.iml" filepath="$PROJECT_DIR$/code_muji_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/muji_android/code_muji_android-code_muji_android.iml" filepath="$PROJECT_DIR$/muji_android/code_muji_android-code_muji_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/muji_android/muji_android.iml" filepath="$PROJECT_DIR$/muji_android/muji_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/slidelibrary/slidelibrary.iml" filepath="$PROJECT_DIR$/slidelibrary/slidelibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testleanclound/testleanclound.iml" filepath="$PROJECT_DIR$/testleanclound/testleanclound.iml" />
+    </modules>
+  </component>
+</project>
+

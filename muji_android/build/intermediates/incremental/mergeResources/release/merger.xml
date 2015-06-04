@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="unspecified"><source path="D:\code_muji_android\muji_android\build\intermediates\exploded-aar\code_muji_android\slidelibrary\unspecified\res"><file path="D:\code_muji_android\muji_android\build\intermediates\exploded-aar\code_muji_android\slidelibrary\unspecified\res\values\values.xml" qualifiers=""><item name="header" type="id"/><item name="expandable_toggle_button" type="id"/><declare-styleable name="StickyListHeadersListView"><attr name="android:clipToPadding"/><attr name="android:scrollbars"/><attr name="android:overScrollMode"/><attr name="android:padding"/><attr name="android:paddingLeft"/><attr name="android:paddingTop"/><attr name="android:paddingRight"/><attr name="android:paddingBottom"/><attr name="android:fadingEdgeLength"/><attr name="android:requiresFadingEdge"/><attr name="android:cacheColorHint"/><attr name="android:choiceMode"/><attr name="android:drawSelectorOnTop"/><attr name="android:fastScrollEnabled"/><attr name="android:fastScrollAlwaysVisible"/><attr name="android:listSelector"/><attr name="android:scrollingCache"/><attr name="android:scrollbarStyle"/><attr name="android:divider"/><attr name="android:dividerHeight"/><attr name="android:transcriptMode"/><attr format="boolean" name="hasStickyHeaders"/><attr format="boolean" name="isDrawingListUnderStickyHeader"/></declare-styleable><item name="expandable" type="id"/><string-array name="countries">
+        
+        <item>Afghanistan</item>
+        <item>Albania</item>
+        <item>Algeria</item>
+        <item>Andorra</item>
+        <item>Angola</item>
+        <item>Antigua &amp; Barbuda</item>
+        <item>Argentina</item>
+        <item>Armenia</item>
+        <item>Australia</item>
+        <item>Austria</item>
+        <item>Azerbaijan</item>
+         
+        <item>Bahamas</item>
+        <item>Bahrain</item>
+        <item>Bangladesh</item>
+        <item>Barbados</item>
+        <item>Belarus</item>
+        <item>Belgium</item>
+        <item>Belize</item>
+        <item>Benin</item>
+        <item>Bhutan</item>
+        <item>Bolivia</item>
+        <item>Bosnia and Herzegovina</item>
+        <item>Botswana</item>
+        <item>Brazil</item>
+        <item>Brunei</item>
+        <item>Bulgaria</item>
+        <item>Burkina Faso</item>
+        <item>Burma</item>
+        <item>Burundi</item>
+        
+        <item>Cambodia</item>
+        <item>Cameroon</item>
+        <item>Canada</item>
+        <item>Cape Verde</item>
+        <item>Central African Republic</item>
+        <item>Chad</item>
+        <item>Chile</item>
+        <item>China</item>
+        <item>Colombia</item>
+        <item>Comoros</item>
+        <item>Congo, Democratic Republic of the</item>
+        <item>Congo, Republic of the</item>
+        <item>Costa Rica</item>
+        <item>Cote d\'voire</item>
+        <item>Croatia</item>
+        <item>Cuba</item>
+        <item>Cyprus</item>
+        <item>Czech Republic</item>
+        
+        <item>Denmark</item>
+        <item>Djibouti</item>
+        <item>Dominica</item>
+        <item>Dominican Republic</item>
+        
+        <item>Ecuador</item>
+        <item>Egypt</item>
+        <item>El Salvador</item>
+        <item>Equatorial Guinea</item>
+        <item>Eritrea</item>
+        <item>Estonia</item>
+        <item>Ethiopia</item>
+        
+        <item>Fiji</item>
+        <item>Finland</item>
+        <item>France</item>
+
+        <item>Gabon</item>
+        <item>Gambia, The</item>
+        <item>Georgia</item>
+        <item>Ghana</item>
+        <item>Greece</item>
+        <item>Grenada</item>
+        <item>Guatemala</item>
+        <item>Guinea</item>
+        <item>Guinea-Bissau</item>
+        <item>Guyana</item>
+        
+        <item>Haiti</item>
+        <item>Holy See</item>
+        <item>Honduras</item>
+        <item>Hong Kong</item>
+        <item>Hungary</item>
+        
+        <item>Iceland</item>
+        <item>India</item>
+        <item>Indonesia</item>
+        <item>Iran</item>
+        <item>Iraq</item>
+        <item>Ireland</item>
+        <item>Israel</item>
+        <item>Italy</item>
+        
+        <item>Jamaica</item>
+        <item>Japan</item>
+        <item>Jordan</item>
+        
+        <item>Kazakhstan</item>
+        <item>Kenya</item>
+        <item>Kiribati</item>
+        <item>Korea, North</item>
+        <item>Korea, South</item>
+        <item>Kosovo</item>
+        <item>Kuwait</item>
+        <item>Kyrgyzstan</item>
+        
+        <item>Laos</item>
+        <item>Latvia</item>
+        <item>Lebanon</item>
+        <item>Lesotho</item>
+        <item>Liberia</item>
+        <item>Libya</item>
+        <item>Liechtenstein</item>
+        <item>Lithuania</item>
+        <item>Luxembourg</item>
+        
+        <item>Macau</item>
+		<item>Macedonia</item>
+		<item>Madagascar</item>
+		<item>Malawi</item>
+		<item>Malaysia</item>
+		<item>Maldives</item>
+		<item>Mali</item>
+		<item>Malta</item>
+		<item>Marshall Islands</item>
+		<item>Mauritania</item>
+		<item>Mauritius</item>
+		<item>Mexico</item>
+		<item>Micronesia</item>
+		<item>Moldova</item>
+		<item>Monaco</item>
+		<item>Mongolia</item>
+		<item>Montenegro</item>
+		<item>Morocco</item>
+		<item>Mozambique</item>
+		
+        <item>Namibia</item>
+		<item>Nauru</item>
+		<item>Nepal</item>
+		<item>Netherlands</item>
+		<item>Netherlands Antilles</item>
+		<item>New Zealand</item>
+		<item>Nicaragua</item>
+		<item>Niger</item>
+		<item>Nigeria</item>
+		<item>North Korea</item>
+		<item>Norway</item>
+		
+        <item>Oman</item>
+        
+        <item>Pakistan</item>
+		<item>Palau</item>
+		<item>Palestinian Territories</item>
+		<item>Panama</item>
+		<item>Papua New Guinea</item>
+		<item>Paraguay</item>
+		<item>Peru</item>
+		<item>Philippines</item>
+		<item>Poland</item>
+		<item>Portugal</item>
+		
+        <item>Qatar</item>
+        
+        <item>Romania</item>
+        <item>Russia</item>
+        <item>Rwanda</item>
+        
+        <item>Saint Kitts and Nevis</item>
+		<item>Saint Lucia</item>
+		<item>Saint Vincent and the Grenadines</item>
+		<item>Samoa</item>
+		<item>San Marino</item>
+		<item>Sao Tome and Principe</item>
+		<item>Saudi Arabia</item>
+		<item>Senegal</item>
+		<item>Serbia</item>
+		<item>Seychelles</item>
+		<item>Sierra Leone</item>
+		<item>Singapore</item>
+		<item>Slovakia</item>
+		<item>Slovenia</item>
+		<item>Solomon Islands</item>
+		<item>Somalia</item>
+		<item>South Africa</item>
+		<item>South Korea</item>
+		<item>South Sudan</item>
+		<item>Spain</item>
+		<item>Sri Lanka</item>
+		<item>Sudan</item>
+		<item>Suriname</item>
+		<item>Swaziland</item>
+		<item>Sweden</item>
+		<item>Switzerland</item>
+		<item>Syria</item>
+
+        <item>Taiwan</item>
+        <item>Tajikistan</item>
+        <item>Tanzania</item>
+        <item>Thailand </item>
+        <item>Timor-Leste</item>
+        <item>Togo</item>
+        <item>Tonga</item>
+        <item>Trinidad and Tobago</item>
+        <item>Tunisia</item>
+        <item>Turkey</item>
+        <item>Turkmenistan</item>
+        <item>Tuvalu</item>
+        
+        <item>Uganda</item>
+        <item>Ukraine</item>
+        <item>United Arab Emirates</item>
+        <item>United Kingdom</item>
+        <item>Uruguay</item>
+        <item>Uzbekistan</item>
+        
+        <item>Vanuatu</item>
+        <item>Venezuela</item>
+        <item>Vietnam</item>
+        
+        <item>Yemen</item>
+        
+        <item>Zambia</item>
+        <item>Zimbabwe</item>
+    </string-array></file></source></dataSet><dataSet config="main"><source path="D:\code_muji_android\muji_android\res"><file name="abc_slide_in_bottom" path="D:\code_muji_android\muji_android\res\anim\abc_slide_in_bottom.xml" qualifiers="" type="anim"/><file name="abc_slide_out_bottom" path="D:\code_muji_android\muji_android\res\anim\abc_slide_out_bottom.xml" qualifiers="" type="anim"/><file name="in_alpha" path="D:\code_muji_android\muji_android\res\anim\in_alpha.xml" qualifiers="" type="anim"/><file name="out_alpha" path="D:\code_muji_android\muji_android\res\anim\out_alpha.xml" qualifiers="" type="anim"/><file name="slide_left_in" path="D:\code_muji_android\muji_android\res\anim\slide_left_in.xml" qualifiers="" type="anim"/><file name="slide_left_out" path="D:\code_muji_android\muji_android\res\anim\slide_left_out.xml" qualifiers="" type="anim"/><file name="slide_right_in" path="D:\code_muji_android\muji_android\res\anim\slide_right_in.xml" qualifiers="" type="anim"/><file name="slide_right_out" path="D:\code_muji_android\muji_android\res\anim\slide_right_out.xml" qualifiers="" type="anim"/><file name="bg_key0_selector" path="D:\code_muji_android\muji_android\res\drawable\bg_key0_selector.xml" qualifiers="" type="drawable"/><file name="bg_key1_selector" path="D:\code_muji_android\muji_android\res\drawable\bg_key1_selector.xml" qualifiers="" type="drawable"/><file name="bg_key2_selector" path="D:\code_muji_android\muji_android\res\drawable\bg_key2_selector.xml" qualifiers="" type="drawable"/><file name="bg_key3_selector" path="D:\code_muji_android\muji_android\res\drawable\bg_key3_selector.xml" qualifiers="" type="drawable"/><file name="bg_key4_selector" path="D:\code_muji_android\muji_android\res\drawable\bg_key4_selector.xml" qualifiers="" type="drawable"/><file name="bg_key5_selector" path="D:\code_muji_android\muji_android\res\drawable\bg_key5_selector.xml" qualifiers="" type="drawable"/><file name="bg_key6_selector" path="D:\code_muji_android\muji_android\res\drawable\bg_key6_selector.xml" qualifiers="" type="drawable"/><file name="bg_key7_selector" path="D:\code_muji_android\muji_android\res\drawable\bg_key7_selector.xml" qualifiers="" type="drawable"/><file name="bg_key8_selector" path="D:\code_muji_android\muji_android\res\drawable\bg_key8_selector.xml" qualifiers="" type="drawable"/><file name="bg_key9_selector" path="D:\code_muji_android\muji_android\res\drawable\bg_key9_selector.xml" qualifiers="" type="drawable"/><file name="bg_keyjing_selector" path="D:\code_muji_android\muji_android\res\drawable\bg_keyjing_selector.xml" qualifiers="" type="drawable"/><file name="bg_keyxing_selector" path="D:\code_muji_android\muji_android\res\drawable\bg_keyxing_selector.xml" qualifiers="" type="drawable"/><file name="call_phone_gif3" path="D:\code_muji_android\muji_android\res\drawable\call_phone_gif3.gif" qualifiers="" type="drawable"/><file name="chatmsg_date_shape" path="D:\code_muji_android\muji_android\res\drawable\chatmsg_date_shape.xml" qualifiers="" type="drawable"/><file name="collapse2_selector" path="D:\code_muji_android\muji_android\res\drawable\collapse2_selector.xml" qualifiers="" type="drawable"/><file name="collapse_selector" path="D:\code_muji_android\muji_android\res\drawable\collapse_selector.xml" qualifiers="" type="drawable"/><file name="collapse_text_selector" path="D:\code_muji_android\muji_android\res\drawable\collapse_text_selector.xml" qualifiers="" type="drawable"/><file name="contacts_selector" path="D:\code_muji_android\muji_android\res\drawable\contacts_selector.xml" qualifiers="" type="drawable"/><file name="discovery_selector" path="D:\code_muji_android\muji_android\res\drawable\discovery_selector.xml" qualifiers="" type="drawable"/><file name="green_bg_shape" path="D:\code_muji_android\muji_android\res\drawable\green_bg_shape.xml" qualifiers="" type="drawable"/><file name="header_selector" path="D:\code_muji_android\muji_android\res\drawable\header_selector.xml" qualifiers="" type="drawable"/><file name="header_shape" path="D:\code_muji_android\muji_android\res\drawable\header_shape.xml" qualifiers="" type="drawable"/><file name="keyboard_edit_bg" path="D:\code_muji_android\muji_android\res\drawable\keyboard_edit_bg.xml" qualifiers="" type="drawable"/><file name="login_bt_bg" path="D:\code_muji_android\muji_android\res\drawable\login_bt_bg.xml" qualifiers="" type="drawable"/><file name="messages_left_selector" path="D:\code_muji_android\muji_android\res\drawable\messages_left_selector.xml" qualifiers="" type="drawable"/><file name="messages_right_selector" path="D:\code_muji_android\muji_android\res\drawable\messages_right_selector.xml" qualifiers="" type="drawable"/><file name="message_check_selector" path="D:\code_muji_android\muji_android\res\drawable\message_check_selector.xml" qualifiers="" type="drawable"/><file name="message_selector" path="D:\code_muji_android\muji_android\res\drawable\message_selector.xml" qualifiers="" type="drawable"/><file name="search_edit_bg" path="D:\code_muji_android\muji_android\res\drawable\search_edit_bg.xml" qualifiers="" type="drawable"/><file name="tab_text_selector" path="D:\code_muji_android\muji_android\res\drawable\tab_text_selector.xml" qualifiers="" type="drawable"/><file name="call_out" path="D:\code_muji_android\muji_android\res\drawable-hdpi\call_out.png" qualifiers="hdpi-v4" type="drawable"/><file name="call_phone_bg2" path="D:\code_muji_android\muji_android\res\drawable-hdpi\call_phone_bg2.png" qualifiers="hdpi-v4" type="drawable"/><file name="call_phone_gif1" path="D:\code_muji_android\muji_android\res\drawable-hdpi\call_phone_gif1.gif" qualifiers="hdpi-v4" type="drawable"/><file name="contact_add" path="D:\code_muji_android\muji_android\res\drawable-hdpi\contact_add.png" qualifiers="hdpi-v4" type="drawable"/><file name="delete" path="D:\code_muji_android\muji_android\res\drawable-hdpi\delete.png" qualifiers="hdpi-v4" type="drawable"/><file name="icon_call_in" path="D:\code_muji_android\muji_android\res\drawable-hdpi\icon_call_in.png" qualifiers="hdpi-v4" type="drawable"/><file name="icon_call_missed" path="D:\code_muji_android\muji_android\res\drawable-hdpi\icon_call_missed.png" qualifiers="hdpi-v4" type="drawable"/><file name="icon_call_out" path="D:\code_muji_android\muji_android\res\drawable-hdpi\icon_call_out.png" qualifiers="hdpi-v4" type="drawable"/><file name="icon_login_key" path="D:\code_muji_android\muji_android\res\drawable-hdpi\icon_login_key.png" qualifiers="hdpi-v4" type="drawable"/><file name="icon_login_keysel" path="D:\code_muji_android\muji_android\res\drawable-hdpi\icon_login_keysel.png" qualifiers="hdpi-v4" type="drawable"/><file name="icon_login_user" path="D:\code_muji_android\muji_android\res\drawable-hdpi\icon_login_user.png" qualifiers="hdpi-v4" type="drawable"/><file name="icon_login_usersel" path="D:\code_muji_android\muji_android\res\drawable-hdpi\icon_login_usersel.png" qualifiers="hdpi-v4" type="drawable"/><file name="ic_launcher" path="D:\code_muji_android\muji_android\res\drawable-hdpi\ic_launcher.png" qualifiers="hdpi-v4" type="drawable"/><file name="left" path="D:\code_muji_android\muji_android\res\drawable-hdpi\left.9.png" qualifiers="hdpi-v4" type="drawable"/><file name="right" path="D:\code_muji_android\muji_android\res\drawable-hdpi\right.9.png" qualifiers="hdpi-v4" type="drawable"/><file name="search_clear" path="D:\code_muji_android\muji_android\res\drawable-hdpi\search_clear.png" qualifiers="hdpi-v4" type="drawable"/><file name="collapse" path="D:\code_muji_android\muji_android\res\drawable-mdpi\collapse.png" qualifiers="mdpi-v4" type="drawable"/><file name="collapse_selected" path="D:\code_muji_android\muji_android\res\drawable-mdpi\collapse_selected.png" qualifiers="mdpi-v4" type="drawable"/><file name="contacts" path="D:\code_muji_android\muji_android\res\drawable-mdpi\contacts.png" qualifiers="mdpi-v4" type="drawable"/><file name="contacts_selected" path="D:\code_muji_android\muji_android\res\drawable-mdpi\contacts_selected.png" qualifiers="mdpi-v4" type="drawable"/><file name="discover" path="D:\code_muji_android\muji_android\res\drawable-mdpi\discover.png" qualifiers="mdpi-v4" type="drawable"/><file name="discover_selected" path="D:\code_muji_android\muji_android\res\drawable-mdpi\discover_selected.png" qualifiers="mdpi-v4" type="drawable"/><file name="ic_launcher" path="D:\code_muji_android\muji_android\res\drawable-mdpi\ic_launcher.png" qualifiers="mdpi-v4" type="drawable"/><file name="message" path="D:\code_muji_android\muji_android\res\drawable-mdpi\message.png" qualifiers="mdpi-v4" type="drawable"/><file name="message_selected" path="D:\code_muji_android\muji_android\res\drawable-mdpi\message_selected.png" qualifiers="mdpi-v4" type="drawable"/><file name="phone" path="D:\code_muji_android\muji_android\res\drawable-mdpi\phone.png" qualifiers="mdpi-v4" type="drawable"/><file name="actionbar_call_hub" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\actionbar_call_hub.png" qualifiers="xhdpi-v4" type="drawable"/><file name="action_copy_nal" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\action_copy_nal.png" qualifiers="xhdpi-v4" type="drawable"/><file name="action_copy_sel" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\action_copy_sel.png" qualifiers="xhdpi-v4" type="drawable"/><file name="action_delete_nal" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\action_delete_nal.png" qualifiers="xhdpi-v4" type="drawable"/><file name="action_delete_sel" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\action_delete_sel.png" qualifiers="xhdpi-v4" type="drawable"/><file name="action_share_nal" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\action_share_nal.png" qualifiers="xhdpi-v4" type="drawable"/><file name="action_share_sel" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\action_share_sel.png" qualifiers="xhdpi-v4" type="drawable"/><file name="add_message" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\add_message.png" qualifiers="xhdpi-v4" type="drawable"/><file name="call" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\call.png" qualifiers="xhdpi-v4" type="drawable"/><file name="collapse" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\collapse.png" qualifiers="xhdpi-v4" type="drawable"/><file name="collapse_selected" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\collapse_selected.png" qualifiers="xhdpi-v4" type="drawable"/><file name="contacts" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\contacts.png" qualifiers="xhdpi-v4" type="drawable"/><file name="contacts_selected" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\contacts_selected.png" qualifiers="xhdpi-v4" type="drawable"/><file name="discover" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\discover.png" qualifiers="xhdpi-v4" type="drawable"/><file name="discover_selected" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\discover_selected.png" qualifiers="xhdpi-v4" type="drawable"/><file name="gif_base" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\gif_base.gif" qualifiers="xhdpi-v4" type="drawable"/><file name="gif_ble" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\gif_ble.gif" qualifiers="xhdpi-v4" type="drawable"/><file name="icon_addmsg_add" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\icon_addmsg_add.png" qualifiers="xhdpi-v4" type="drawable"/><file name="icon_call_change" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\icon_call_change.png" qualifiers="xhdpi-v4" type="drawable"/><file name="icon_call_close" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\icon_call_close.png" qualifiers="xhdpi-v4" type="drawable"/><file name="icon_call_connect" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\icon_call_connect.png" qualifiers="xhdpi-v4" type="drawable"/><file name="icon_discover_base" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\icon_discover_base.png" qualifiers="xhdpi-v4" type="drawable"/><file name="icon_discover_bggreen" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\icon_discover_bggreen.png" qualifiers="xhdpi-v4" type="drawable"/><file name="icon_discover_bgred" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\icon_discover_bgred.png" qualifiers="xhdpi-v4" type="drawable"/><file name="icon_discover_ble" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\icon_discover_ble.png" qualifiers="xhdpi-v4" type="drawable"/><file name="icon_discover_round" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\icon_discover_round.png" qualifiers="xhdpi-v4" type="drawable"/><file name="icon_next" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\icon_next.png" qualifiers="xhdpi-v4" type="drawable"/><file name="icon_search" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\icon_search.png" qualifiers="xhdpi-v4" type="drawable"/><file name="icon_update" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\icon_update.png" qualifiers="xhdpi-v4" type="drawable"/><file name="ic_delete" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\ic_delete.png" qualifiers="xhdpi-v4" type="drawable"/><file name="ic_launcher" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\ic_launcher.png" qualifiers="xhdpi-v4" type="drawable"/><file name="key_0" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\key_0.png" qualifiers="xhdpi-v4" type="drawable"/><file name="key_0_selected" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\key_0_selected.png" qualifiers="xhdpi-v4" type="drawable"/><file name="key_1" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\key_1.png" qualifiers="xhdpi-v4" type="drawable"/><file name="key_1_selected" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\key_1_selected.png" qualifiers="xhdpi-v4" type="drawable"/><file name="key_2" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\key_2.png" qualifiers="xhdpi-v4" type="drawable"/><file name="key_2_selected" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\key_2_selected.png" qualifiers="xhdpi-v4" type="drawable"/><file name="key_3" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\key_3.png" qualifiers="xhdpi-v4" type="drawable"/><file name="key_3_selected" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\key_3_selected.png" qualifiers="xhdpi-v4" type="drawable"/><file name="key_4" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\key_4.png" qualifiers="xhdpi-v4" type="drawable"/><file name="key_4_selected" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\key_4_selected.png" qualifiers="xhdpi-v4" type="drawable"/><file name="key_5" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\key_5.png" qualifiers="xhdpi-v4" type="drawable"/><file name="key_5_selected" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\key_5_selected.png" qualifiers="xhdpi-v4" type="drawable"/><file name="key_6" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\key_6.png" qualifiers="xhdpi-v4" type="drawable"/><file name="key_6_selected" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\key_6_selected.png" qualifiers="xhdpi-v4" type="drawable"/><file name="key_7" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\key_7.png" qualifiers="xhdpi-v4" type="drawable"/><file name="key_7_selected" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\key_7_selected.png" qualifiers="xhdpi-v4" type="drawable"/><file name="key_8" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\key_8.png" qualifiers="xhdpi-v4" type="drawable"/><file name="key_8_selected" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\key_8_selected.png" qualifiers="xhdpi-v4" type="drawable"/><file name="key_9" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\key_9.png" qualifiers="xhdpi-v4" type="drawable"/><file name="key_9_selected" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\key_9_selected.png" qualifiers="xhdpi-v4" type="drawable"/><file name="key_jing" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\key_jing.png" qualifiers="xhdpi-v4" type="drawable"/><file name="key_jing_selected" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\key_jing_selected.png" qualifiers="xhdpi-v4" type="drawable"/><file name="key_xing" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\key_xing.png" qualifiers="xhdpi-v4" type="drawable"/><file name="key_xing_selected" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\key_xing_selected.png" qualifiers="xhdpi-v4" type="drawable"/><file name="message" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\message.png" qualifiers="xhdpi-v4" type="drawable"/><file name="message_check_nal" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\message_check_nal.png" qualifiers="xhdpi-v4" type="drawable"/><file name="message_check_sel" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\message_check_sel.png" qualifiers="xhdpi-v4" type="drawable"/><file name="message_selected" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\message_selected.png" qualifiers="xhdpi-v4" type="drawable"/><file name="phone" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\phone.png" qualifiers="xhdpi-v4" type="drawable"/><file name="shadow_left" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\shadow_left.png" qualifiers="xhdpi-v4" type="drawable"/><file name="volume1" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\volume1.png" qualifiers="xhdpi-v4" type="drawable"/><file name="volume2" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\volume2.png" qualifiers="xhdpi-v4" type="drawable"/><file name="volume_control" path="D:\code_muji_android\muji_android\res\drawable-xhdpi\volume_control.png" qualifiers="xhdpi-v4" type="drawable"/><file name="call_phone_bg" path="D:\code_muji_android\muji_android\res\drawable-xxhdpi\call_phone_bg.jpg" qualifiers="xxhdpi-v4" type="drawable"/><file name="call_phone_bg1" path="D:\code_muji_android\muji_android\res\drawable-xxhdpi\call_phone_bg1.jpg" qualifiers="xxhdpi-v4" type="drawable"/><file name="icon_call" path="D:\code_muji_android\muji_android\res\drawable-xxhdpi\icon_call.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="icon_edit" path="D:\code_muji_android\muji_android\res\drawable-xxhdpi\icon_edit.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="icon_message" path="D:\code_muji_android\muji_android\res\drawable-xxhdpi\icon_message.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="icon_no_call" path="D:\code_muji_android\muji_android\res\drawable-xxhdpi\icon_no_call.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="icon_person" path="D:\code_muji_android\muji_android\res\drawable-xxhdpi\icon_person.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="ic_launcher" path="D:\code_muji_android\muji_android\res\drawable-xxhdpi\ic_launcher.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="messages_left9" path="D:\code_muji_android\muji_android\res\drawable-xxhdpi\messages_left9.9.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="messages_left9sel" path="D:\code_muji_android\muji_android\res\drawable-xxhdpi\messages_left9sel.9.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="messages_right9" path="D:\code_muji_android\muji_android\res\drawable-xxhdpi\messages_right9.9.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="messages_right9sel" path="D:\code_muji_android\muji_android\res\drawable-xxhdpi\messages_right9sel.9.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="activity_addmsg" path="D:\code_muji_android\muji_android\res\layout\activity_addmsg.xml" qualifiers="" type="layout"/><file name="activity_chatmsg" path="D:\code_muji_android\muji_android\res\layout\activity_chatmsg.xml" qualifiers="" type="layout"/><file name="activity_forget" path="D:\code_muji_android\muji_android\res\layout\activity_forget.xml" qualifiers="" type="layout"/><file name="activity_guide" path="D:\code_muji_android\muji_android\res\layout\activity_guide.xml" qualifiers="" type="layout"/><file name="activity_header" path="D:\code_muji_android\muji_android\res\layout\activity_header.xml" qualifiers="" type="layout"/><file name="activity_login" path="D:\code_muji_android\muji_android\res\layout\activity_login.xml" qualifiers="" type="layout"/><file name="activity_main" path="D:\code_muji_android\muji_android\res\layout\activity_main.xml" qualifiers="" type="layout"/><file name="activity_register" path="D:\code_muji_android\muji_android\res\layout\activity_register.xml" qualifiers="" type="layout"/><file name="call_phone" path="D:\code_muji_android\muji_android\res\layout\call_phone.xml" qualifiers="" type="layout"/><file name="chatmsg_left" path="D:\code_muji_android\muji_android\res\layout\chatmsg_left.xml" qualifiers="" type="layout"/><file name="chatmsg_right" path="D:\code_muji_android\muji_android\res\layout\chatmsg_right.xml" qualifiers="" type="layout"/><file name="contacts_list_item" path="D:\code_muji_android\muji_android\res\layout\contacts_list_item.xml" qualifiers="" type="layout"/><file name="contact_item_popup" path="D:\code_muji_android\muji_android\res\layout\contact_item_popup.xml" qualifiers="" type="layout"/><file name="contact_list_popup" path="D:\code_muji_android\muji_android\res\layout\contact_list_popup.xml" qualifiers="" type="layout"/><file name="dialog_config" path="D:\code_muji_android\muji_android\res\layout\dialog_config.xml" qualifiers="" type="layout"/><file name="dialog_godisconver" path="D:\code_muji_android\muji_android\res\layout\dialog_godisconver.xml" qualifiers="" type="layout"/><file name="fragment_contacts" path="D:\code_muji_android\muji_android\res\layout\fragment_contacts.xml" qualifiers="" type="layout"/><file name="fragment_discover" path="D:\code_muji_android\muji_android\res\layout\fragment_discover.xml" qualifiers="" type="layout"/><file name="fragment_message" path="D:\code_muji_android\muji_android\res\layout\fragment_message.xml" qualifiers="" type="layout"/><file name="fragment_phone" path="D:\code_muji_android\muji_android\res\layout\fragment_phone.xml" qualifiers="" type="layout"/><file name="header" path="D:\code_muji_android\muji_android\res\layout\header.xml" qualifiers="" type="layout"/><file name="keyboard_popup" path="D:\code_muji_android\muji_android\res\layout\keyboard_popup.xml" qualifiers="" type="layout"/><file name="list_other_footer" path="D:\code_muji_android\muji_android\res\layout\list_other_footer.xml" qualifiers="" type="layout"/><file name="list_search_header" path="D:\code_muji_android\muji_android\res\layout\list_search_header.xml" qualifiers="" type="layout"/><file name="message_list_item" path="D:\code_muji_android\muji_android\res\layout\message_list_item.xml" qualifiers="" type="layout"/><file name="phone_list_item" path="D:\code_muji_android\muji_android\res\layout\phone_list_item.xml" qualifiers="" type="layout"/><file name="swipeback_layout" path="D:\code_muji_android\muji_android\res\layout\swipeback_layout.xml" qualifiers="" type="layout"/><file name="test_fragment" path="D:\code_muji_android\muji_android\res\layout\test_fragment.xml" qualifiers="" type="layout"/><file name="test_list_item_layout" path="D:\code_muji_android\muji_android\res\layout\test_list_item_layout.xml" qualifiers="" type="layout"/><file name="main" path="D:\code_muji_android\muji_android\res\menu\main.xml" qualifiers="" type="menu"/><file path="D:\code_muji_android\muji_android\res\values\arrays.xml" qualifiers=""><string-array name="sms_key">
+
+        <!-- 短信序号，如100 -->
+        <item>_id</item>
+        <!-- 对话的序号，如100，与同一个手机号互发的短信，其序号是相同的 -->
+        <item>thread_id</item>
+        <!-- 发件人地址，即手机号，如+8613811810000 -->
+        <item>address</item>
+        <!-- 日期，long型，如1256539465022，可以对日期显示格式进行设置 -->
+        <item>date</item>
+        <!-- 协议0SMS_RPOTO短信，1MMS_PROTO彩信 -->
+        <item>protocol</item>
+        <!-- 是否阅读0未读，1已读 -->
+        <item>read</item>
+        <!-- 短信状态-1接收，0complete,64pending,128failed -->
+        <item>status</item>
+        <!-- 短信类型1是接收到的，2是已发出 -->
+        <item>type</item>
+        <!-- 短信具体内容 -->
+        <item>body</item>
+    </string-array></file><file path="D:\code_muji_android\muji_android\res\values\attrs.xml" qualifiers=""><declare-styleable name="CustomTheme">
+        <attr format="reference" name="gifMoviewViewStyle"/>
+    </declare-styleable><declare-styleable name="GifMoviewView">
+        <attr format="reference" name="gif"/>
+        <attr format="boolean" name="paused"/>
+    </declare-styleable><declare-styleable name="SwipeBackLayout">
+        <attr format="dimension" name="edge_size"/>
+        <attr name="edge_flag">
+            <enum name="left" value="0"/>
+            <enum name="right" value="1"/>
+            <enum name="bottom" value="2"/>
+            <enum name="all" value="3"/>
+        </attr>
+        <attr format="reference" name="shadow_left"/>
+        <attr format="reference" name="shadow_right"/>
+        <attr format="reference" name="shadow_bottom"/>
+    </declare-styleable><attr format="reference" name="SwipeBackLayoutStyle"/></file><file path="D:\code_muji_android\muji_android\res\values\colors.xml" qualifiers=""><color name="red">#ff0000</color><color name="menu_section_header">#FFDDDDDD</color><color name="tab_text">#17BEAD</color><color name="bg_grey">#F0F0F6</color><color name="header_normal">#ffe74c3c</color><color name="bg_progress">#0FBCAA</color><color name="grey_phone">#A5A5A5</color><color name="b9_grey">#B9B9B9</color><color name="f7_grey">#7F7F7F</color><color name="bt_green">#64d364</color><color name="transparent">#00000000</color><color name="header_pressed">#ffc0392b</color><color name="white">#ffffff</color></file><file path="D:\code_muji_android\muji_android\res\values\dimens.xml" qualifiers=""><dimen name="activity_vertical_margin">16dp</dimen><dimen name="activity_horizontal_margin">16dp</dimen></file><file path="D:\code_muji_android\muji_android\res\values\strings.xml" qualifiers=""><string name="hello_world">Hello world!</string><string name="is_oppen_true">true</string><string name="discover_mydevice">我的设备</string><string name="discover_configure">配置信息</string><string name="discover_version">版本信息</string><string name="action_settings">Settings</string><string name="app_name">拇机</string><string name="is_oppen_false">false</string></file><file path="D:\code_muji_android\muji_android\res\values\styles.xml" qualifiers=""><declare-styleable name="SlidingDrawer">
+        <attr name="orientation">
+            <enum name="horizontal" value="0"/>
+            <enum name="vertical" value="1"/>
+        </attr>
+        <attr format="dimension|reference" name="bottomOffset"/>
+        <attr format="dimension|reference" name="topOffset"/>
+        <attr format="boolean" name="allowSingleTap"/>
+        <attr format="boolean" name="animateOnClick"/>
+        <attr format="reference" name="handle"/>
+        <attr format="reference" name="content"/>
+    </declare-styleable><style name="SwipeBackLayout">
+        <item name="edge_size">50dip</item>
+        <item name="shadow_left">@drawable/shadow_left</item>
+    </style><style name="style_image_keyboard">
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_weight">1.0</item>
+    </style><style name="popwin_anim_style">
+        <item name="android:windowEnterAnimation">@anim/abc_slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/abc_slide_out_bottom</item>
+    </style><style name="Widget.GifMoviewView" parent="@android:style/Widget"/><style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:windowBackground">@drawable/call_phone_bg</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style><style name="AppThemeIsTranslucent" parent="AppBaseTheme">
+       <item name="android:windowIsTranslucent">true</item>
+    </style><style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+
+        -->
+    </style><style name="CustomRadio">
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+    </style></file><file path="D:\code_muji_android\muji_android\res\values-sw720dp-land\dimens.xml" qualifiers="sw720dp-land-v13"><dimen name="activity_horizontal_margin">128dp</dimen></file><file path="D:\code_muji_android\muji_android\res\values-v11\styles.xml" qualifiers="v11"><style name="AppBaseTheme" parent="android:Theme.Holo.Light">
+        <!-- API 11 theme customizations can go here. -->
+    </style></file><file path="D:\code_muji_android\muji_android\res\values-v14\styles.xml" qualifiers="v14"><style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- API 14 theme customizations can go here. -->
+    </style></file></source><source path="D:\code_muji_android\muji_android\build\generated\res\rs\release"/><source path="D:\code_muji_android\muji_android\build\generated\res\generated\release"/></dataSet><dataSet config="release"><source path="D:\code_muji_android\muji_android\build-types\release\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="SwipeBackLayout"><attr format="dimension" name="edge_size"/><attr name="edge_flag"><enum name="left" value="0"/><enum name="right" value="1"/><enum name="bottom" value="2"/><enum name="all" value="3"/></attr><attr format="reference" name="shadow_left"/><attr format="reference" name="shadow_right"/><attr format="reference" name="shadow_bottom"/></declare-styleable><declare-styleable name="SlidingDrawer"><attr name="orientation"><enum name="horizontal" value="0"/><enum name="vertical" value="1"/></attr><attr format="dimension|reference" name="bottomOffset"/><attr format="dimension|reference" name="topOffset"/><attr format="boolean" name="allowSingleTap"/><attr format="boolean" name="animateOnClick"/><attr format="reference" name="handle"/><attr format="reference" name="content"/></declare-styleable><declare-styleable name="StickyListHeadersListView"><attr name="android:clipToPadding"/><attr name="android:scrollbars"/><attr name="android:overScrollMode"/><attr name="android:padding"/><attr name="android:paddingLeft"/><attr name="android:paddingTop"/><attr name="android:paddingRight"/><attr name="android:paddingBottom"/><attr name="android:fadingEdgeLength"/><attr name="android:requiresFadingEdge"/><attr name="android:cacheColorHint"/><attr name="android:choiceMode"/><attr name="android:drawSelectorOnTop"/><attr name="android:fastScrollEnabled"/><attr name="android:fastScrollAlwaysVisible"/><attr name="android:listSelector"/><attr name="android:scrollingCache"/><attr name="android:scrollbarStyle"/><attr name="android:divider"/><attr name="android:dividerHeight"/><attr name="android:transcriptMode"/><attr format="boolean" name="hasStickyHeaders"/><attr format="boolean" name="isDrawingListUnderStickyHeader"/></declare-styleable><declare-styleable name="CustomTheme"><attr format="reference" name="gifMoviewViewStyle"/></declare-styleable><declare-styleable name="GifMoviewView"><attr format="reference" name="gif"/><attr format="boolean" name="paused"/></declare-styleable></configuration></mergedItems></merger>
