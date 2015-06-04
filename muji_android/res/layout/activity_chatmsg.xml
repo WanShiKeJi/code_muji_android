@@ -9,7 +9,7 @@
         android:id="@+id/ll_chatmsg_header"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#000000"
+        android:background="@drawable/header_shape"
         android:gravity="center_vertical"
         android:orientation="horizontal" >
 
@@ -46,17 +46,57 @@
             android:background="@drawable/actionbar_call_hub" />
     </LinearLayout>
 
+    <RelativeLayout
+        android:id="@+id/rl_chatmsg_header"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:background="@drawable/header_shape"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/tv_chatmsg_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="取消"
+            />
+
+        <TextView
+            android:id="@+id/tv_chatmsg_selectoridx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="17dp"
+            android:layout_centerInParent="true"
+            android:text="请选择项目"/>
+
+        <CheckBox
+            android:id="@+id/tv_chatmsg_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:button="@null"
+            android:background="@null"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:text="全选"/>
+
+        </RelativeLayout>
+
     <ListView
         android:id="@+id/lv_chatmsg_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:divider="@null"
-        android:listSelector="@android:color/transparent"
-        android:transcriptMode="alwaysScroll" >
+        android:listSelector="@android:color/transparent" >
     </ListView>
 
     <LinearLayout
+        android:id="@+id/ll_chatmsg_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
@@ -83,4 +123,51 @@
             android:text="发送"/>
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/ll_chatmsg_bottoms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:background="@color/white"
+        android:visibility="gone"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1">
+        <TextView
+            android:id="@+id/tv_chatmsg_copy"
+            android:layout_width="wrap_content"
+            android:enabled="false"
+            android:background="@drawable/checkable_action_copy"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+        <TextView
+            android:id="@+id/tv_chatmsg_share"
+            android:layout_width="wrap_content"
+            android:enabled="false"
+            android:background="@drawable/checkable_action_share"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1">
+        <TextView
+            android:id="@+id/tv_chatmsg_delet"
+            android:layout_width="wrap_content"
+            android:enabled="false"
+            android:background="@drawable/checkable_action_delete"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

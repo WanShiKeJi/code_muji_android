@@ -1,7 +1,10 @@
 package com.src.playtime.thumb.utils;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -16,6 +19,10 @@ import com.src.playtime.thumb.bean.SmsModel;
  */
 public class PinyinSearch {
 
+    //存储上一次正则
+    public static List<Map<String,List<String>>> mRegularArray=new ArrayList<Map<String,List<String>>>();
+    private static List<String> mRegularStr=new ArrayList<String>();
+    private String oldRegular,nowRegular;
     /**
      * 根据输入的字符串返回搜索到的短信
      *
@@ -34,6 +41,19 @@ public class PinyinSearch {
                 temp.add(smsModel);
             }
         }
+        //去重
+        for (int i = 0; i < temp.size(); i++)  //外循环是循环的次数
+        {
+            for (int j = temp.size() - 1 ; j > i; j--)  //内循环是 外循环一次比较的次数
+            {
+                if (temp.get(i).getName().equals(temp.get(j).getName()))
+                {
+                    temp.remove(i);
+                }
+
+            }
+        }
+        Collections.reverse(temp);
         return temp;
     }
 
@@ -111,6 +131,112 @@ public class PinyinSearch {
         }
         return temp;
     }
+
+    /**
+     * 根据正则去检索
+     * @param search
+     * @param mData
+     * @param isAddRegular 是否增加正则表达式
+     * @return
+     */
+    public synchronized static List<ContactModel> FindRegularPinYin(String search,List<ContactModel> mData,boolean isAddRegular){
+        //正则表达式
+        String Regular="";
+        Map<String,List<String>> mMapArray=new HashMap<String,List<String>>();
+        List<ContactModel> mTemp=new ArrayList<ContactModel>();
+        List<String> TempRglList=new ArrayList<String>();
+        search=search.replace("*","A").replace("#","B").replace("+","C");
+        String sub=search.substring(search.length()-1,search.length());
+        String MapKey=search.substring(0,search.length()-1);
+
+        if(isAddRegular){
+        if(search.length()==1){
+            Regular="-("+search+"\\d*)";
+            //TempRglList.add(new String[]{Regular});
+            TempRglList.add(Regular);
+           // Log.e("mRegularArray====>","Size:"+mRegularArray.size());
+        }else if(search.length()>1){
+           // TempRglList.clear();
+             //取出所有表达式的值
+           // for (int n = 0; n <mRegularArray.size() ; n++) {
+             List<String> mStrRgl=mRegularArray.get(mRegularArray.size()-1).get(MapKey);
+                    for (int k = 0; k <mStrRgl.size() ; k++) {
+                    //每一个表达式都可以分裂成两种新的表达式
+                    String subones[]=mStrRgl.get(k).split("-");
+                    String subone;
+                    if(subones[subones.length-1].length()>6){
+                        String tempsubone=subones[subones.length-1].replace("\\d*","");
+                        tempsubone=mStrRgl.get(k).replace(subones[subones.length-1],tempsubone);
+                        subone=tempsubone+"-("+sub+"\\d*)";
+                    }else{
+                        subone=mStrRgl.get(k)+"-("+sub+"\\d*)";
+                    }
+                        String subtwo=mStrRgl.get(k).substring(0, mStrRgl.get(k).lastIndexOf("\\"))+sub+"\\d*)";
+                        Log.e("mStrRgl----->",subone+"---"+subtwo);
+                        TempRglList.add(subone);
+                        TempRglList.add(subtwo);
+                    }
+                //    }
+        }
+        //减少表达式
+        }else{
+            mRegularArray.remove(mRegularArray.size()-1);
+            mMapArray=mRegularArray.get(mRegularArray.size()-1);
+        }
+        if(isAddRegular){
+            mMapArray.put(search,TempRglList);
+            //  Log.e("mMapArray---->","search---->"+search);
+        }
+        //mRegularArray.clear();
+       // Map<String,List<String>> TempMapArray=mRegularArray.get(mRegularArray.size()-1);
+        //查找所有符合条件的名字
+        for (int i = 0; i <mMapArray.get(search).size() ; i++) {
+            String reguler=mMapArray.get(search).get(i);
+            boolean isReguler=false;
+            Pattern p = Pattern.compile(reguler,Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
+            for (int k = 0; k <mData.size() ; k++) {
+                for (int j = 0; j <mData.get(k).getPynameList().size() ; j++) {
+                Matcher m = p.matcher(mData.get(k).getPynameList().get(j));
+                if (m.find()) {
+                    mTemp.add(mData.get(k));
+                    mData.get(k).group = m.group();
+                    isReguler=true;
+                } else {
+                    if (mData.get(k).getTelnum().contains(search)) {
+                        mData.get(k).group = search;
+                        mTemp.add(mData.get(k));
+                    }
+
+                }
+            }
+        }
+            if(!isReguler){
+                mMapArray.get(search).remove(i);
+            }
+    }
+
+        if(isAddRegular){
+            mRegularArray.add(mMapArray);
+            //  Log.e("mMapArray---->","search---->"+search);
+        }
+
+        //去重
+        for (int i = 0; i < mTemp.size(); i++)  //外循环是循环的次数
+        {
+            for (int j = mTemp.size() - 1 ; j > i; j--)  //内循环是 外循环一次比较的次数
+            {
+                //名字相同并且号码也相同则去重
+                if (mTemp.get(i).getName().equals(mTemp.get(j).getName())&&mTemp.get(i).getTelnum().equals(mTemp.get(j).getTelnum()))
+                {
+                    mTemp.remove(j);
+                }
+
+            }
+        }
+        return mTemp;
+    }
+
+
 
     /**
      * 判断字符串里是否有中文

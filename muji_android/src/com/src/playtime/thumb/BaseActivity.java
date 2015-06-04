@@ -23,6 +23,7 @@ import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.src.playtime.thumb.blueService.BlueServiceManage;
 import com.src.playtime.thumb.phone.CallPhoneActivity;
 
 import java.util.ArrayList;
@@ -44,14 +45,13 @@ public class BaseActivity extends FragmentActivity implements OnClickListener {
 
 	public Notification mNotification;
 
-
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		mAct = this;
 		mApp = (MyApplication) getApplication();
 		mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
 	}
 
 	/** 显示常驻通知栏 */

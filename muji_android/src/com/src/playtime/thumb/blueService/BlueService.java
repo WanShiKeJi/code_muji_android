@@ -299,7 +299,7 @@ public class BlueService extends Service {
 	}
 
 	@SuppressLint("NewApi")
-	public boolean init() {
+	protected boolean init() {
 
 		// 判断是否支持BLE
 		if (!getPackageManager().hasSystemFeature(
@@ -314,10 +314,11 @@ public class BlueService extends Service {
 
 		// 开启蓝牙模块
 		if (blueAdapter == null || !blueAdapter.isEnabled()) {
-			Intent enableBlueIntent = new Intent(
-					BluetoothAdapter.ACTION_REQUEST_ENABLE);
-			startActivity(enableBlueIntent
-					.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+            blueAdapter.enable();
+//			Intent enableBlueIntent = new Intent(
+//					BluetoothAdapter.ACTION_REQUEST_ENABLE);
+//			startActivity(enableBlueIntent
+//					.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
 			return false;
 		}
 		return true;
@@ -413,7 +414,7 @@ public class BlueService extends Service {
 			}
 			if (connect(mDeviceAddress)) {
 			} else {
-				// Toast.makeText(this, "连接设备失败", 0).show();
+				 //Toast.makeText(this, "连接设备失败", 0).show();
 				return;
 			}
 		}

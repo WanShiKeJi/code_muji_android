@@ -26,7 +26,17 @@ public class SmsModel extends DataSupport {
 
 	private String body;// 短信具体内容
 
-	public String getName() {
+    public boolean sel=false;//是否选中
+
+    public boolean getSel() {
+        return sel;
+    }
+
+    public void setSel(boolean sel) {
+        this.sel = sel;
+    }
+
+    public String getName() {
 		return name;
 	}
 
