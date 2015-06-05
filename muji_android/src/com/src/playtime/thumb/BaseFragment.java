@@ -199,16 +199,16 @@ public class BaseFragment extends Fragment implements OnClickListener {
      *
      * @return
      */
-    public View showConfigDialog(String email,String phone) {
+    public View showConfigDialog() {
         mConfigView=LayoutInflater.from(mAct).inflate(R.layout.dialog_config,null);
         AlertDialog.Builder builder = new AlertDialog.Builder(mAct);
         mConfigDialog = builder.setView(mConfigView).create();
         mConfigView.findViewById(R.id.tv_config_cancel).setOnClickListener(this);
         mConfigView.findViewById(R.id.tv_config_confirm).setOnClickListener(this);
-        EditText mEmail= (EditText) mConfigView.findViewById(R.id.ed_config_email);
-        EditText mPhone= (EditText) mConfigView.findViewById(R.id.ed_config_phone);
-        mEmail.setText(email);
-        mPhone.setText(phone);
+      //  EditText mEmail= (EditText) mConfigView.findViewById(R.id.ed_config_email);
+        //EditText mPhone= (EditText) mConfigView.findViewById(R.id.ed_config_phone);
+//        mEmail.setText(email);
+//        mPhone.setText(phone);
         mConfigDialog.show();
         return mConfigView;
     }
@@ -258,55 +258,13 @@ public class BaseFragment extends Fragment implements OnClickListener {
 	@Override
 	public void onClick(View v) {
         switch (v.getId()){
-            case R.id.tv_config_confirm:
-                putConfigShared();
-                break;
             case R.id.tv_config_cancel:
                 mConfigDialog.dismiss();
                 break;
         }
 	}
 
-    public  void  putConfigShared(){
-        EditText mEmail= (EditText) mConfigView.findViewById(R.id.ed_config_email);
-        EditText mPhone= (EditText) mConfigView.findViewById(R.id.ed_config_phone);
-        EditText mPass= (EditText) mConfigView.findViewById(R.id.ed_config_password);
-        final String email=mEmail.getText().toString().trim();
-        final String phone=mPhone.getText().toString().trim();
-        final String password=mPass.getText().toString().trim();
-        SharedPreferences mShare=this.getSharedPreferences("muji");
-        final SharedPreferences.Editor mEditor=mShare.edit();
-        if(email.equals("")||phone.equals("")){
-            showToast("请把信息填写完整！");
-        return;
-        }
-        AVUser avUser=new AVUser();
-        avUser.setUsername(email);
-        avUser.setPassword(password);
-        avUser.setEmail(email);
-        avUser.put("mujiphone",phone);
-        avUser.signUpInBackground(new SignUpCallback() {
-            @Override
-            public void done(AVException e) {
-                if (e==null){
-                    //注册成功
-                    mEditor.putString("email",email);
-                    mEditor.putString("phone",phone);
-                    mEditor.putString("password",password);
-                    mEditor.commit();
-                    mConfigDialog.dismiss();
-                    callTransfer(phone);
-                }else{
-                    Log.e("message----","---"+e.getMessage());
-                    if(e.getCode()==203){
-                        showToast("该邮箱已被注册!");
-                    }
-                }
-            }
-        });
 
-
-    }
 
     public void callTransfer(String phone){
         SharedPreferences mShare=this.getSharedPreferences("muji");

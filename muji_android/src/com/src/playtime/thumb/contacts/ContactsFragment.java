@@ -142,6 +142,7 @@ public class ContactsFragment extends BaseFragment implements TextWatcher,
 			} else {
 				m.setPyname(pyname);
 			}
+            m.setPynameList(BaseUtil.getPinYinNum(name));
 			mContactDatas.add(m);
 		}
 		cursor.close();
