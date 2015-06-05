@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="andbase">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/muji_android/libs/andbase.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

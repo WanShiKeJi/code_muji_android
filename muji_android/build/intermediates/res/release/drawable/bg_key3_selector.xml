@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item android:drawable="@drawable/key_3" android:state_pressed="false"></item>
-    <item android:drawable="@drawable/key_3_selected" android:state_pressed="true"></item>
-
-</selector><!-- From: file:/D:/code_muji_android/muji_android/res/drawable/bg_key3_selector.xml -->

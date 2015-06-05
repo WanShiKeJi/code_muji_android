@@ -6,11 +6,11 @@
 
     <include layout="@layout/activity_header" />
 
-    <com.baoyz.swipemenulistview.SwipeMenuListView
+    <ListView
         android:id="@+id/lv_message_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="none" >
-    </com.baoyz.swipemenulistview.SwipeMenuListView>
+    </ListView>
 
 </LinearLayout><!-- From: file:/D:/code_muji_android/muji_android/res/layout/fragment_message.xml -->

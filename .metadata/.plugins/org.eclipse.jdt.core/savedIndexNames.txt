@@ -1,8 +1,0 @@
-INDEX VERSION 1.127+D:\code_muji_android\.metadata\.plugins\org.eclipse.jdt.core
-2143995448.index
-1237697093.index
-51540572.index
-533563431.index
-2474562275.index
-270495776.index
-499419644.index

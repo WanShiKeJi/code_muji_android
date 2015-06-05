@@ -20,6 +20,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerInParent="true"
-        android:layout_marginRight="10dp" />
+        android:layout_marginRight="8dp" />
 
 </RelativeLayout><!-- From: file:/D:/code_muji_android/muji_android/res/layout/activity_header.xml -->

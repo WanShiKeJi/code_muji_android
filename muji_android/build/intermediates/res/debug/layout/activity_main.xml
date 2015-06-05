@@ -21,7 +21,7 @@
         <LinearLayout
             android:id="@+id/sd_keyboard"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="300dp"
             android:layout_alignParentBottom="true"
             android:orientation="vertical"
             android:visibility="gone" >

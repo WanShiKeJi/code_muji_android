@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="xUtils-2.5.5">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/muji_android/libs/xUtils-2.5.5.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

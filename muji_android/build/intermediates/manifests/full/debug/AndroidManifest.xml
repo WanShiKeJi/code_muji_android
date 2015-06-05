@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="11"
+        android:minSdkVersion="8"
         android:targetSdkVersion="18" />
     <!-- 拨打电话权限 -->
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -16,16 +16,6 @@
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.GET_TASKS" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    //leancloud所用到的权限
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    //蓝牙权限
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <application
         android:name="com.src.playtime.thumb.MyApplication"
@@ -53,31 +43,11 @@
         <activity
             android:name="com.src.playtime.thumb.message.ChatMsgActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeIsTranslucent"
             android:windowSoftInputMode="stateAlwaysHidden" >
         </activity>
         <activity
             android:name="com.src.playtime.thumb.message.AddMsgActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeIsTranslucent"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
-        <activity
-            android:name="com.src.playtime.thumb.login.LoginActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeIsTranslucent" >
-        </activity>
-        <activity
-            android:name="com.src.playtime.thumb.login.RegisterActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeIsTranslucent" >
-        </activity>
-        <activity
-            android:name="com.src.playtime.thumb.login.ForgetActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeIsTranslucent" >
-        </activity>
-
-        <service android:name="com.src.playtime.thumb.blueService.BlueService" />
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
