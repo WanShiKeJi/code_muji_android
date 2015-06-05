@@ -52,7 +52,7 @@ public class PinyinSearch {
          * 判断是否是以字母来搜索
 		 */
         if (str.charAt(0) >= 'a' && str.charAt(0) <= 'z'
-                || str.charAt(0) >= 'A' && str.charAt(0) <= 'Z'||str.charAt(0)>='0'||str.charAt(0)<='9') {
+                || str.charAt(0) >= 'A' && str.charAt(0) <= 'Z'||str.charAt(0)>='0'&& str.charAt(0)<='9'&&!isNumber) {
             return contains(str, mData);
         }
 

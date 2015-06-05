@@ -48,6 +48,7 @@ import com.src.playtime.thumb.phone.PhoneFragment;
 import com.src.playtime.thumb.utils.BaseUtil;
 import com.src.playtime.thumb.utils.PinyinComparator;
 import com.src.playtime.thumb.widget.CustomSearchLinearLayout;
+import com.waitingfy.callhelper.GetLocationByNumber;
 
 public class MainActivity extends BaseActivity {
 
@@ -100,10 +101,12 @@ public class MainActivity extends BaseActivity {
 		initPopupwindow();
 		InitFragmentView();
 		ReadContactsData();
+        String location= GetLocationByNumber.getCallerInfo("1357679", mAct);
+       // Log.e("number-------->","attribution---"+location);
 //       new Thread(new Runnable() {
 //            @Override
 //            public void run() {
-                getSmsFromPhone();
+        getSmsFromPhone();
 //           }
 //       }).start();
 
