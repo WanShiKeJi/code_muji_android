@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="11"
+        android:minSdkVersion="8"
         android:targetSdkVersion="18" />
     <!-- 拨打电话权限 -->
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -23,9 +23,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    //蓝牙权限
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
     <application
         android:name="com.src.playtime.thumb.MyApplication"
@@ -58,28 +55,7 @@
         </activity>
         <activity android:name=".message.AddMsgActivity"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden"
             android:theme="@style/AppThemeIsTranslucent"></activity>
-
-        <activity
-            android:name=".login.LoginActivity"
-            android:theme="@style/AppThemeIsTranslucent"
-            android:screenOrientation="portrait" >
-        </activity>
-
-        <activity
-            android:name=".login.RegisterActivity"
-            android:theme="@style/AppThemeIsTranslucent"
-            android:screenOrientation="portrait" >
-        </activity>
-
-        <activity
-            android:name=".login.ForgetActivity"
-            android:theme="@style/AppThemeIsTranslucent"
-            android:screenOrientation="portrait" >
-        </activity>
-
-        <service android:name=".blueService.BlueService"></service>
     </application>
 
 </manifest>

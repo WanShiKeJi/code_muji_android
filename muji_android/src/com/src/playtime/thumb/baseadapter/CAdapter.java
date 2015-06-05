@@ -19,7 +19,7 @@ public abstract class CAdapter<T> extends BaseAdapter {
 
 	protected int layoutId;
 	// 验证字符串用
-	public String inspection = "";
+	protected String inspection = "";
 
 	protected MultiItemTypeSupport<T> mMultiItemSupport;
 

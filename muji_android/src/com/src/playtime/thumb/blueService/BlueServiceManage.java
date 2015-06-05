@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Build;
 import android.os.IBinder;
-import android.util.Log;
 
 import com.src.playtime.thumb.MyApplication;
 
@@ -75,7 +74,7 @@ public class BlueServiceManage {
 		public void onServiceConnected(ComponentName name, IBinder service) {
 			BlueService.MyBinder binder = (BlueService.MyBinder) service;
 			mBlueServer = binder.getService();
-            // 绑定成功后通知操作
+			// 绑定成功后通知操作
 			// handler.sendEmptyMessage(BIND_SUCCESS);
 			// mBlueServer.initDevice();
 		}

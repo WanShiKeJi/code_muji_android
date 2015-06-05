@@ -6,17 +6,11 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
-import android.text.Spannable;
-import android.text.SpannableStringBuilder;
-import android.text.style.ForegroundColorSpan;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.widget.TextView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Eric Frohnhoefer
@@ -44,8 +38,6 @@ public class UnderlineTextView extends TextView {
 		mUnderlineHeight = (int) TypedValue.applyDimension(
 				TypedValue.COMPLEX_UNIT_DIP, 2, r.getDisplayMetrics());
 	}
-
-
 
 	@Override
 	public void setPadding(int left, int top, int right, int bottom) {

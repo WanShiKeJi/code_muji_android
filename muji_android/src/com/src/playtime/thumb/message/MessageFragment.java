@@ -1,6 +1,5 @@
 package com.src.playtime.thumb.message;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -51,9 +50,6 @@ public class MessageFragment extends BaseFragment implements TextWatcher,
 
 	private MessageAdapter mAdapter;
 
-    /**搜索出来的临时数组*/
-    private List<SmsModel> mTempSearch;
-
 	@ViewInject(R.id.lv_message_list)
 	private SwipeMenuListView mListView;
 
@@ -75,9 +71,7 @@ public class MessageFragment extends BaseFragment implements TextWatcher,
 	}
 
 	public void init() {
-        mTempSearch=new ArrayList<SmsModel>();
-        mTempSearch.addAll(mApp.mSmsDatas);
-		mAdapter = new MessageAdapter(mAct, mTempSearch,
+		mAdapter = new MessageAdapter(mAct, mApp.mSmsDatas,
 				R.layout.message_list_item, null);
 		mListView.setAdapter(mAdapter);
 		mHeaderView = LayoutInflater.from(mAct).inflate(
@@ -142,9 +136,7 @@ public class MessageFragment extends BaseFragment implements TextWatcher,
 			mHeaderEd.setText("");
 			break;
 		case R.id.header_right:
-            Intent intent=new Intent(mAct,AddMsgActivity.class);
-            intent.putExtra("body","");
-			startActivity(intent);
+			startActivity(new Intent(mAct,AddMsgActivity.class));
 			break;
 		}
 
@@ -160,16 +152,14 @@ public class MessageFragment extends BaseFragment implements TextWatcher,
 	@Override
 	public void onTextChanged(CharSequence s, int start, int before, int count) {
 		if (TextUtils.isEmpty(s)) {
-            mTempSearch.clear();
-            mTempSearch.addAll(mApp.mSmsDatas);
-			mAdapter.refresh(mTempSearch, "");
+			mAdapter.refresh(mApp.mSmsDatas, "");
 			mHeaderTvClear.setVisibility(View.GONE);
 		} else {
 			mHeaderTvClear.setVisibility(View.VISIBLE);
 			// search(s.toString());
-            mTempSearch = PinyinSearch.FindSms(s.toString(),
-					mApp.TempSmsDatas);
-			mAdapter.refresh(mTempSearch, s.toString());
+			List<SmsModel> temp = PinyinSearch.FindSms(s.toString(),
+					mApp.mSmsDatas);
+			mAdapter.refresh(temp, "");
 		}
 
 	}
@@ -184,9 +174,8 @@ public class MessageFragment extends BaseFragment implements TextWatcher,
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
 		Intent intent = new Intent(mAct, ChatMsgActivity.class);
-		intent.putExtra("tel",mTempSearch.get(position - 1).getAddress());
-		intent.putExtra("name", mTempSearch.get(position - 1).getName());
-        intent.putExtra("inspection",mHeaderEd.getText().toString().trim());
+		intent.putExtra("tel", mApp.mSmsDatas.get(position - 1).getAddress());
+		intent.putExtra("name", mApp.mSmsDatas.get(position - 1).getName());
 		startActivity(intent);
 	}
 

@@ -10,7 +10,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import android.annotation.SuppressLint;
-import android.bluetooth.BluetoothAdapter;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
@@ -42,7 +41,6 @@ import com.lidroid.xutils.view.annotation.event.OnClick;
 import com.src.playtime.thumb.baseadapter.FragmentTabAdapter;
 import com.src.playtime.thumb.bean.ContactModel;
 import com.src.playtime.thumb.bean.SmsModel;
-import com.src.playtime.thumb.blueService.BlueServiceManage;
 import com.src.playtime.thumb.contacts.ContactsFragment;
 import com.src.playtime.thumb.discover.DiscoverFragment;
 import com.src.playtime.thumb.message.MessageFragment;
@@ -103,17 +101,17 @@ public class MainActivity extends BaseActivity {
 		initPopupwindow();
 		InitFragmentView();
 		ReadContactsData();
-        //String location= GetLocationByNumber.getCallerInfo("1357679", mAct);
-//        BluetoothAdapter adpter= BluetoothAdapter.getDefaultAdapter();
-//        adpter.enable();
+        String location= GetLocationByNumber.getCallerInfo("1357679", mAct);
+       // Log.e("number-------->","attribution---"+location);
 //       new Thread(new Runnable() {
 //            @Override
 //            public void run() {
-       // getSmsFromPhone();
+        getSmsFromPhone();
 //           }
 //       }).start();
 
-    }
+
+	}
 
 	public void InitFragmentView() {
 		mRbList[0] = mRb1;
@@ -130,7 +128,6 @@ public class MainActivity extends BaseActivity {
 		mDiscover = new DiscoverFragment();
 		// 把键盘弹出界面的实例设置到电话界面里
 		mPhone.setPhoneFragmentPop(mSearchView);
-        mPhone.setDisconverRadioButton(mRbList);
 		mFragmentList.add(mPhone);
 		mFragmentList.add(mMessage);
 		mFragmentList.add(mContacts);
@@ -260,13 +257,12 @@ public class MainActivity extends BaseActivity {
 			m.setTelnum(cursor.getString(1).replace(" ", "").replace("-", ""));
 			m.setContactId(cursor.getString(3));
 			// 只要不是大小写字母就归为#分类下
-            if (!(pyname.charAt(0) >= 'A' && pyname.charAt(0) <= 'Z' || pyname
+			if (!(pyname.charAt(0) >= 'A' && pyname.charAt(0) <= 'Z' || pyname
 					.charAt(0) >= 'a' && pyname.charAt(0) <= 'z')) {
-                m.setPyname("#"+pyname);
+				m.setPyname("#" + pyname);
 			} else {
 				m.setPyname(pyname);
 			}
-            m.setPynameList(BaseUtil.getPinYinNum(name));
 			mDatas.add(m);
 		}
 		cursor.close();
@@ -320,7 +316,7 @@ public class MainActivity extends BaseActivity {
 			mApp.TempSmsDatas.add(SmsModel);
 
 		}
-        /**按时间先后排序*/
+
         Collections.sort(mApp.TempSmsDatas, new Comparator<SmsModel>() {
             @Override
             public int compare(SmsModel lhs, SmsModel rhs) {

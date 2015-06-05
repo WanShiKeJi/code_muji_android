@@ -10,8 +10,5 @@
     <color name="bg_progress">#0FBCAA</color>
     <color name="red">#ff0000</color>
     <color name="tab_text">#17BEAD</color>
-    <color name="f7_grey">#7F7F7F</color>
-    <color name="b9_grey">#B9B9B9</color>
-    <color name="bt_green">#64d364</color>
-    <color name="transparent">#00000000</color>
+
 </resources>

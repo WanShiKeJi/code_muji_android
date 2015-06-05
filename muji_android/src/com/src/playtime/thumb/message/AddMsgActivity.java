@@ -66,9 +66,6 @@ public class AddMsgActivity extends SwipeBackActivity implements TextWatcher{
     /**查询到的临时数据*/
     private List<ContactModel> mTempData;
 
-    /**转发的内容*/
-    private String body="";
-
     private PopupWindow mPopup;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -81,10 +78,6 @@ public class AddMsgActivity extends SwipeBackActivity implements TextWatcher{
 	}
 
     public void init(){
-        body=getIntent().getStringExtra("body");
-        if(!body.equals("")){
-            mEdMsg.setText(body);
-        }
         mData=new ArrayList<SmsModel>();
         mContactData=new ArrayList<ContactModel>();
         mTempData=new ArrayList<ContactModel>();

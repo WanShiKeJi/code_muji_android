@@ -3,8 +3,6 @@ package com.src.playtime.thumb.widget;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -18,12 +16,9 @@ import com.src.playtime.thumb.baseadapter.CAdapter;
 import com.src.playtime.thumb.bean.ContactModel;
 import com.src.playtime.thumb.utils.BaseUtil;
 import com.src.playtime.thumb.utils.PinyinSearch;
-import com.waitingfy.callhelper.GetLocationByNumber;
 
 import android.app.ActionBar.LayoutParams;
-import android.app.Activity;
 import android.content.Context;
-import android.os.Message;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -91,8 +86,6 @@ public class CustomSearchLinearLayout implements OnClickListener, TextWatcher {
 	private MyApplication mApp;
 
 	private View mView;
-
-    private String oldString,newString;
 
 	public CustomSearchLinearLayout getCustomView(Context context,
 			ViewGroup view) {
@@ -208,69 +201,34 @@ public class CustomSearchLinearLayout implements OnClickListener, TextWatcher {
 	}
 
 	@Override
-	public void beforeTextChanged(CharSequence s, int arg1, int arg2,
+	public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
 			int arg3) {
-		    oldString=s.toString();
+		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void onTextChanged(final CharSequence s, int arg1, int arg2, int arg3) {
+	public void onTextChanged(CharSequence s, int arg1, int arg2, int arg3) {
 		if (TextUtils.isEmpty(s)) {
 			// Collections.reverse(mApp.mTelRecordDatas);
-           // PinyinSearch.mRegularArray.clear();
 			mAdapter.refresh(mApp.mTelRecordDatas, s.toString());
 			if (mApp.mTelRecordDatas.isEmpty()) {
 				mListView.setVisibility(View.GONE);
 			}
 		} else {
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    List<ContactModel> temp;
-                    if(oldString.length()<s.toString().length()){
-                     temp=PinyinSearch.FindRegularPinYin(s.toString(),mApp.mContactDatas,true);
-                    }else{
-                     temp=PinyinSearch.FindRegularPinYin(s.toString(),mApp.mContactDatas,false);
-                     Log.e("customSearch======>","====>false");
-                    }
-
-                    Message msg=handler.obtainMessage();
-                    msg.what=0;
-                    msg.obj=temp;
-                    handler.sendMessage(msg);
-                }
-            }).start();
-           // mAdapter.refresh(temp, s.toString());
-//			List<ContactModel> temp = PinyinSearch.FindPinyin(s.toString(),
-//					AllcontactList, true);
-//			if (temp.isEmpty()) {
-//				ContactModel model = new ContactModel();
-//				model.setName(s.toString());
-//				model.setTelnum("");
-//                 if (s.length()>=7){
-//                     String tempstr=s.toString().substring(0,7).trim();
-//                    model.setOperators(BaseUtil.getOperator(tempstr));
-//                    model.setAttribution(GetLocationByNumber.getCallerInfo(tempstr, context));
-//                }
-//				temp.add(model);
-//			}
-//			mAdapter.refresh(temp, s.toString());
-//			mListView.setVisibility(View.VISIBLE);
+			List<ContactModel> temp = PinyinSearch.FindPinyin(s.toString(),
+					AllcontactList, true);
+			if (temp.isEmpty()) {
+				ContactModel model = new ContactModel();
+				model.setName(s.toString());
+				model.setTelnum("");
+				temp.add(model);
+			}
+			mAdapter.refresh(temp, s.toString());
+			mListView.setVisibility(View.VISIBLE);
 		}
 
 	}
-
-    android.os.Handler handler=new android.os.Handler(){
-
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            mAdapter.refresh((List<ContactModel>)msg.obj,et.getText().toString());
-            mListView.setVisibility(View.VISIBLE);
-        }
-    };
-
 
 	/**
 	 * 设置查询所要用到的参数
@@ -337,7 +295,10 @@ public class CustomSearchLinearLayout implements OnClickListener, TextWatcher {
 	 * 
 	 * @param str
 	 *            正则表达式
-
+	 * @param pyName
+	 *            拼音
+	 * @param isIncludsive
+	 *            搜索条件是否大于6个字符
 	 * @return
 	 */
 	public boolean contains(String str, ContactModel model, String search) {

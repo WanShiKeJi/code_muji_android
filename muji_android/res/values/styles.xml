@@ -67,8 +67,5 @@
         <item name="edge_size">50dip</item>
         <item name="shadow_left">@drawable/shadow_left</item>
     </style>
-    
-    <!---->
-
 
 </resources>

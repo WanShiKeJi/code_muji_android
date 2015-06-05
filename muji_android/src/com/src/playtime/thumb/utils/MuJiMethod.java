@@ -9,7 +9,6 @@ import com.src.playtime.thumb.MyApplication;
 import com.src.playtime.thumb.R;
 import com.src.playtime.thumb.bean.ContactModel;
 import com.src.playtime.thumb.phone.CallPhoneActivity;
-import com.waitingfy.callhelper.GetLocationByNumber;
 
 import android.app.Activity;
 import android.app.Notification;
@@ -115,16 +114,12 @@ public class MuJiMethod {
 		}
 		ContactModel TempModel = new ContactModel();
 		String date = System.currentTimeMillis()+"";
-        String attribution= GetLocationByNumber.getCallerInfo(Tel, context);
-        String operators=BaseUtil.getOperator(Tel);
 		// 遍历通讯录 如果有相同号码 则把数据库的信息取出赋值到model里
 		for (int i = 0; i < mApp.mContactDatas.size(); i++) {
 			if (mApp.mContactDatas.get(i).getTelnum().replace("+86", "")
 					.equals(Tel.replace("+86", ""))) {
 				TempModel = mApp.mContactDatas.get(i);
 				TempModel.setDate(date);
-                TempModel.setAttribution(attribution);
-                TempModel.setOperators(operators);
 				break;
 			}
 		}
@@ -133,8 +128,6 @@ public class MuJiMethod {
 			TempModel.setName(Tel);
 			// model.setTelnum(mPopup.et.getText().toString());
 			TempModel.setDate(date);
-            TempModel.setAttribution(attribution);
-            TempModel.setOperators(operators);
 		}
 		boolean isShowNotifi = false;
         //判断是否在拨打电话
