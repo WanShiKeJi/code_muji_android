@@ -21,37 +21,195 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:orientation="vertical" >
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:background="@color/grey_phone" />
+        android:padding="20dp"
+        android:orientation="horizontal" >
 
         <LinearLayout
-            android:id="@+id/ll_discover_config"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="10dp" >
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/tv_discover_phone"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="配置邮箱和拇机号码"
-                android:textColor="#7F7F7F" />
+                android:textSize="12sp"
+                android:textColor="@color/b9_grey"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/icon_next" />
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:textColor="@color/f7_grey"
+                android:text="手机"
+                android:background="@drawable/icon_discover_round"/>
+
+            <TextView
+                android:id="@+id/tv_discover_login"
+                android:layout_width="wrap_content"
+                android:text="登录"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:background="@drawable/icon_discover_bggreen"
+                android:layout_height="wrap_content" />
+
         </LinearLayout>
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="1px"
-            android:background="@color/grey_phone" />
+            android:layout_weight="1.1"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_height="match_parent">
+
+
+            <com.src.playtime.thumb.widget.GifMovieView
+                xmlns:custom="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/gif_discover_ble"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/icon_discover_ble"
+                custom:gif="@drawable/icon_discover_ble"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:background="@drawable/icon_discover_ble"
+              />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/tv_discover_ble"
+                android:layout_width="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="绑定"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:background="@drawable/icon_discover_bggreen"
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_discover_mjphone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/b9_grey"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/f7_grey"
+                android:text="拇机"
+                android:background="@drawable/icon_discover_round"/>
+
+            <TextView
+                android:id="@+id/tv_discover_config"
+                android:layout_width="wrap_content"
+                android:text="配置"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:background="@drawable/icon_discover_bggreen"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1.1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_height="match_parent">
+
+                <com.src.playtime.thumb.widget.GifMovieView
+                    xmlns:custom="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/gif_discover_base"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/icon_discover_ble"
+                    custom:gif="@drawable/icon_discover_ble"
+                    android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textColor="@android:color/transparent"
+                android:gravity="center"
+                android:visibility="invisible"
+                android:background="@drawable/icon_discover_bggreen"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/tv_discover_operators"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textColor="@color/b9_grey"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/f7_grey"
+                android:layout_marginBottom="5dp"
+                android:text="通讯"
+                android:background="@drawable/icon_discover_round"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:visibility="invisible"
+                android:background="@drawable/icon_discover_bggreen"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+
     </LinearLayout>
 
     <TextView

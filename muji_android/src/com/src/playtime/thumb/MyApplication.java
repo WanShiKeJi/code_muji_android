@@ -16,6 +16,7 @@ import android.view.WindowManager;
 import com.avos.avoscloud.AVOSCloud;
 import com.src.playtime.thumb.bean.ContactModel;
 import com.src.playtime.thumb.bean.SmsModel;
+import com.src.playtime.thumb.blueService.BlueServiceManage;
 import com.src.playtime.thumb.utils.MuJiMethod;
 
 public class MyApplication extends LitePalApplication {
@@ -40,7 +41,8 @@ public class MyApplication extends LitePalApplication {
     //leancloud配置信息
     String AppID="85m0pvb0vv1iluti5sk0xsou1mkftzn06a3f1ompvza9xc7z";
     String AppKey="orluh89ufnpvl773b68w5gcdk4dxfrahzwaahz7c46ettn44";
-
+    //蓝牙管理器
+    public BlueServiceManage mBlueManage;
 
 	@Override
 	public void onCreate() {
@@ -52,6 +54,9 @@ public class MyApplication extends LitePalApplication {
 	}
 
 	public void init() {
+        mBlueManage= BlueServiceManage.getBlueServerManage(this);
+        //启动蓝牙服务
+        mBlueManage.ConnectBlueServer();
 		mContactDatas = new ArrayList<ContactModel>();
 		mTelRecordDatas = new ArrayList<ContactModel>();
 		mSmsDatas = new ArrayList<SmsModel>();

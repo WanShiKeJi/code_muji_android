@@ -1,6 +1,7 @@
 package com.src.playtime.thumb.bean;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.litepal.crud.DataSupport;
 
@@ -29,6 +30,8 @@ public class ContactModel extends DataSupport implements Serializable {
     private String duration="";
     /**当前电话状态*/
     private String state="";
+    /**名字多音字转化为数字的数组*/
+    public List<String> pynameList;
 
 	// public ContactModel(String name, String telnum, String contactId) {
 	// this.name = name;
@@ -39,6 +42,14 @@ public class ContactModel extends DataSupport implements Serializable {
 	//
 	// }
 
+
+    public void setPynameList(List<String> pynameList) {
+        this.pynameList = pynameList;
+    }
+
+    public List<String> getPynameList() {
+        return pynameList;
+    }
 
     public String getState() {
         return state;

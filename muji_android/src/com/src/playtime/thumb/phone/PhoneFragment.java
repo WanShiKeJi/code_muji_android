@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.litepal.crud.DataSupport;
 
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -30,6 +31,8 @@ import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ab.util.AbViewUtil;
@@ -67,6 +70,8 @@ public class PhoneFragment extends BaseFragment {
 	private PhoneAdapter mAdapter;
 
 	private MSlidExpandableListAdapter mSlideAdapter;
+
+    private RadioButton mRbList[];
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -191,7 +196,7 @@ public class PhoneFragment extends BaseFragment {
         String email=getSharedPreferences("muji").getString("email","");
         final String phone=getSharedPreferences("muji").getString("phone","");
         if(email.equals("")||phone.equals("")){
-            showConfigDialog(email,phone);
+            GoDisConverDialog();
         }else{
             String title="";
             if(this.getSharedPreferences("muji").getBoolean("isTransfer",false)){
@@ -214,8 +219,32 @@ public class PhoneFragment extends BaseFragment {
 
     }
 
+    public void GoDisConverDialog(){
+        View mConfigView=LayoutInflater.from(mAct).inflate(R.layout.dialog_godisconver,null);
+        AlertDialog.Builder builder = new AlertDialog.Builder(mAct);
+        final AlertDialog mConfigDialog = builder.setView(mConfigView).create();
+        TextView Ok= (TextView) mConfigView.findViewById(R.id.tv_godis_confirm);
+        TextView noOk= (TextView) mConfigView.findViewById(R.id.tv_godis_cancel);
+        Ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mRbList[3].setChecked(true);
+                mRbList[0].setChecked(false);
+                mConfigDialog.dismiss();
+            }
+        });
+        noOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mConfigDialog.dismiss();
+            }
+        });
+        mConfigDialog.show();
+    }
 
-
+    public void setDisconverRadioButton(RadioButton[] rb){
+        this.mRbList=rb;
+    }
 
 
     @Override
