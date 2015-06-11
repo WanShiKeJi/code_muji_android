@@ -3,6 +3,7 @@ package com.src.playtime.thumb.message;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.zip.CRC32;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -125,7 +126,7 @@ public class MessageFragment extends BaseFragment implements TextWatcher,
                                            int index) {
                 switch (index) {
                     case 0:
-                        mApp.mSmsDatas.remove(position);
+                        mTempSearch.remove(position);
                         mAdapter.notifyDataSetChanged();
                         break;
                 }

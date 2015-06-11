@@ -107,6 +107,7 @@ public class CallPhoneActivity extends BaseActivity implements Runnable {
             mLyConnect.setVisibility(View.GONE);
         }
         timer.start();
+        //mApp.mBlueManage.mBlueServer.sendOrder();
         // timer.setOnChronometerTickListener(this);
     }
 

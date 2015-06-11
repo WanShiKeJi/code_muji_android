@@ -470,7 +470,7 @@ public class BlueService extends Service {
 				// write_charact.addDescriptor(descriptor);
 				// write_charact.setValue(b);
 				// try {
-				notify_charact.setValue("TEMP");
+				notify_charact.setValue(b);
 				// } catch (UnsupportedEncodingException e) {
 				// // TODO Auto-generated catch block
 				// e.printStackTrace();

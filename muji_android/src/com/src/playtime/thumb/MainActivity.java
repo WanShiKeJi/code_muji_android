@@ -46,6 +46,7 @@ import com.src.playtime.thumb.discover.DiscoverFragment;
 import com.src.playtime.thumb.message.MessageFragment;
 import com.src.playtime.thumb.phone.PhoneFragment;
 import com.src.playtime.thumb.utils.BaseUtil;
+import com.src.playtime.thumb.utils.MuJiMethod;
 import com.src.playtime.thumb.utils.PinyinComparator;
 import com.src.playtime.thumb.widget.CustomSearchLinearLayout;
 
@@ -100,10 +101,12 @@ public class MainActivity extends BaseActivity {
 		initPopupwindow();
 		InitFragmentView();
 		ReadContactsData();
+        //Log.e("byte--------->","---"+(byte)Integer.parseInt("12",16));
+        MuJiMethod.getInstance(mAct).sendBTData("13058121800",(byte)0x00);
 //       new Thread(new Runnable() {
 //            @Override
 //            public void run() {
-        getSmsFromPhone();
+       // getSmsFromPhone();
 //           }
 //       }).start();
 
