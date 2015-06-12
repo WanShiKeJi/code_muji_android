@@ -1,6 +1,7 @@
 package com.src.playtime.thumb.discover;
 
 import android.app.AlertDialog;
+import android.bluetooth.BluetoothGattCharacteristic;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -100,7 +101,7 @@ public class DiscoverFragment extends BaseFragment {
     }
 
     @Override
-    @OnClick({R.id.tv_discover_login,R.id.tv_discover_config,R.id.tv_discover_ble})
+    @OnClick({R.id.tv_discover_login,R.id.tv_discover_config,R.id.tv_discover_ble,R.id.ll_discover_rom})
     public void onClick(View v) {
         super.onClick(v);
         switch(v.getId()){
@@ -129,7 +130,7 @@ public class DiscoverFragment extends BaseFragment {
                   }else {
                       showBleDialog();
                   }
-//                BlueServiceManage.getBlueServerManage(mAct).mBlueServer.initDevice();
+                BlueServiceManage.getBlueServerManage(mAct).mBlueServer.initDevice();
                 break;
             case R.id.tv_config_confirm:
                 putConfigShared();
@@ -150,6 +151,22 @@ public class DiscoverFragment extends BaseFragment {
                     mGifBle.setMovieResource(R.drawable.gif_ble);
                 }
                 mConfigDialog.dismiss();
+                break;
+            case R.id.ll_discover_rom:
+                showToast("点击了!");
+                byte bytes[]=new byte[20];
+                for (int i = 0; i <bytes.length; i++) {
+                    bytes[i]=0x00;
+                }
+                bytes[0]=0x5A;
+                bytes[1]=0x10;
+                bytes[2]=0x00;
+                mApp.mBlueManage.mBlueServer.sendOrder(bytes,new BlueService.RequstBtCharacteristic() {
+                    @Override
+                    public void getCharacteristic(BluetoothGattCharacteristic characteristic) {
+
+                    }
+                });
                 break;
         }
     }

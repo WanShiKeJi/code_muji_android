@@ -206,7 +206,7 @@ public class MuJiMethod {
      * @param type
      *        类型
      */
-    public void sendBTData(String phone,byte type) {
+    public void sendBTPhoneData(String phone,byte type) {
         byte bytes[] = new byte[20];
         boolean isWhile=true;
         //前四位为包头
@@ -246,7 +246,10 @@ public class MuJiMethod {
                         break;
                 }
             }
-            bytes[idx]=(byte)Integer.parseInt(sb.toString(),16);
+           // if(sb.toString().equals("00")){
+                bytes[idx]=(byte)Integer.parseInt(sb.toString(),16);
+           // }
+
             idx++;
         }
 
@@ -263,13 +266,10 @@ public class MuJiMethod {
      */
     public void sendBTSmsData(String str) {
         byte bytes[] = new byte[20];
-        //前四位为包头
-        bytes[0] = 0x5A;
-        bytes[1] = 0x19;
-        bytes[2] = 0x00;
-        //短包
-        bytes[3] = 0x00;
         byte[] b = new byte[0];
+        for (int i = 0; i <bytes.length ; i++) {
+            bytes[i]=0x00;
+        }
         try {
             b = str.getBytes("unicode");
         } catch (UnsupportedEncodingException e) {
@@ -279,6 +279,19 @@ public class MuJiMethod {
             bytes[4 + i] = b[i];
             //   }
         }
+        //前四位为包头
+        bytes[0] = 0x5A;
+        bytes[1] = 0x19;
+        bytes[2] = 0x00;
+        //长包
+        bytes[3] = (byte) 0xFF;
+        bytes[4]=0x00;
+        bytes[5]=0x00;
+        bytes[6]=0x00;
+        bytes[7]= (byte) b.length;
+        bytes[8]= 0x10;
+        bytes[9]= 0x24;
+
         mApp.mBlueManage.mBlueServer.sendOrder(bytes);
     }
 

@@ -125,7 +125,7 @@ public class BlueService extends Service {
 			}
 		}
 		// 用适配器连接地址，获得蓝牙设备，若设备为空，则返回false，否则记录地址，设置状态为已连接，返回true
-		BluetoothDevice device = mBluetoothAdapter.getRemoteDevice(address);
+		BluetoothDevice device = mBluetoothAdapter.getRemoteDevice("21:11:76:88:99:99");
 		if (device == null) {
 			isBlueDeviceConnected = false;
 			sendBroadcast(new Intent(CONNECTED_STATE_BROADCAST).putExtra(
@@ -134,7 +134,7 @@ public class BlueService extends Service {
 		}
 		mBluetoothGatt = device.connectGatt(this, false, mGattCallback);
 		if (mBluetoothGatt.connect()) {
-			Log.e("-----", "zzzzzzzzzzzzzzzzzzzz");
+			Log.e("-----", "蓝牙已连接");
 			// sendBroadcast(new Intent(CONNECTED_STATE_BROADCAST).putExtra(
 			// "connected_state", STATE_CONNECTED));
 		}
@@ -168,11 +168,19 @@ public class BlueService extends Service {
 				BluetoothGattCharacteristic characteristic, int status) {
 			// 读操作
 			Log.e("fanhui", "vvvvvvvvvvvvvvvvvvv"
-					+ bytesToHexString(characteristic.getValue()));
+					+ parseData(characteristic));
 
 		};
 
-		public void onConnectionStateChange(BluetoothGatt gatt, int status,
+        @Override
+        public void onCharacteristicWrite(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic, int status) {
+            super.onCharacteristicWrite(gatt, characteristic, status);
+            Log.e("fanhui","onCharacteristicWrite--"+parseData(characteristic));
+            readCharacteristic(write_charact);
+
+        }
+
+        public void onConnectionStateChange(BluetoothGatt gatt, int status,
 				int newState) {
 			// 根据状态执行操作
 			if (newState == BluetoothProfile.STATE_CONNECTED) {
@@ -213,7 +221,7 @@ public class BlueService extends Service {
 			// "getData", ActivityBlueContro.GET_NOTIFY));
 			// int data = parseData(characteristic);
 			// dealData(data);
-
+            Log.e("fanhui","onCharacteristicChanged---"+parseData(characteristic));
 		}
 
 	};
@@ -383,9 +391,9 @@ public class BlueService extends Service {
 			}, ACTION_SCAN_TIME);
 			/** 连接指定的设备用这个方法 */
 			// isScan = true;
-			// blueAdapter.startLeScan(new UUID[] { UUID
-			// .fromString(SampleGattAttributes.GOD_1) },
-			// mLeScanCallback);
+//			blueAdapter.startLeScan(new UUID[] { UUID
+//			.fromString(SampleGattAttributes.GOD_1) },
+//			mLeScanCallback);
 			blueAdapter.startLeScan(mLeScanCallback);
 
 			// else {
@@ -407,6 +415,7 @@ public class BlueService extends Service {
 				byte[] scanRecord) {
 			mDeviceName = device.getName();
 			mDeviceAddress = device.getAddress();
+            Log.e("UUIDs","---"+device.getUuids()+"address"+device.getAddress());
 			// 连接设备
 			if (!initialize()) {
 				// Toast.makeText(this, "初始化失败", 0).show();
@@ -431,11 +440,12 @@ public class BlueService extends Service {
 			// PromptManager.showToast(mApp, "开启指令通道");
 			// write_service =
 			// getSupportedGattService(SampleGattAttributes.SERVICE_WRITE);
-
+            Log.e("---","初始化指令集");
 			notify_service = getSupportedGattService(SampleGattAttributes.SERVICE_NOTIFY);
-			write_charact = notify_service.getCharacteristic(UUID
+            //notify_service.getCharacteristics();
+            write_charact = notify_service.getCharacteristic(UUID
 					.fromString(SampleGattAttributes.CHARACT_WRITE));
-			notify_charact = notify_service.getCharacteristic(UUID
+            notify_charact = notify_service.getCharacteristic(UUID
 					.fromString(SampleGattAttributes.CHARACT_NOTIFY));
 
 			// sendHandOrder();
@@ -456,30 +466,61 @@ public class BlueService extends Service {
 	}
 
 	/**
-	 * 发送指令集
-	 * 
-	 * @param b
-	 *            指令
-	 */
-	public void sendOrder(byte[] b) {
-		if (notify_charact != null) {
-			int prop = notify_charact.getProperties();
-			if ((prop | BluetoothGattCharacteristic.PROPERTY_WRITE) > 0) {
-				// write_charact.setWriteType(50);
-				// int i=BluetoothGattCharacteristic.WRITE_TYPE_DEFAULT;
-				// write_charact.addDescriptor(descriptor);
-				// write_charact.setValue(b);
-				// try {
-				notify_charact.setValue(b);
-				// } catch (UnsupportedEncodingException e) {
-				// // TODO Auto-generated catch block
-				// e.printStackTrace();
-				// }
-				writeCharacteristic(notify_charact);
-				readCharacteristic(notify_charact);
-			}
-		}
-	}
+     * 发送指令集
+     *
+     * @param b
+     *            指令
+     */
+    public void sendOrder(byte[] b,RequstBtCharacteristic requst) {
+        if (notify_charact != null) {
+            int prop = notify_charact.getProperties();
+            if ((prop | BluetoothGattCharacteristic.PROPERTY_WRITE) > 0) {
+                // write_charact.setWriteType(50);
+                // int i=BluetoothGattCharacteristic.WRITE_TYPE_DEFAULT;
+                // write_charact.addDescriptor(descriptor);
+                // write_charact.setValue(b);
+                // try {
+                if(requst!=null){
+
+                }
+                notify_charact.setValue(b);
+                // } catch (UnsupportedEncodingException e) {
+                // // TODO Auto-generated catch block
+                // e.printStackTrace();
+                // }
+                writeCharacteristic(notify_charact);
+                //readCharacteristic(write_charact);
+            }
+        }
+    }
+
+    /**
+     * 发送指令集
+     *
+     * @param b
+     *            指令
+     */
+    public void sendOrder(byte[] b) {
+        if (notify_charact != null) {
+            int prop = notify_charact.getProperties();
+            if ((prop | BluetoothGattCharacteristic.PROPERTY_WRITE) > 0) {
+                // write_charact.setWriteType(50);
+                // int i=BluetoothGattCharacteristic.WRITE_TYPE_DEFAULT;
+                // write_charact.addDescriptor(descriptor);
+                // write_charact.setValue(b);
+                // try {
+                notify_charact.setValue(b);
+                // } catch (UnsupportedEncodingException e) {
+                // // TODO Auto-generated catch block
+                // e.printStackTrace();
+                // }
+                writeCharacteristic(notify_charact);
+                //readCharacteristic(write_charact);
+            }
+        }
+    }
+
+
 
 	public byte[] parseHexStringToBytes(String paramString) {
 		String str = paramString.substring(2).replaceAll("[^[0-9][a-f]]", "");
@@ -494,10 +535,10 @@ public class BlueService extends Service {
 
 	// 设置监听
 	private void setNotify() {
-		if (notify_charact != null) {
-			int prop = notify_charact.getProperties();
+		if (write_charact != null) {
+			int prop = write_charact.getProperties();
 			if ((prop | BluetoothGattCharacteristic.PROPERTY_NOTIFY) > 0) {
-				setCharacteristicNotification(notify_charact, true);
+				setCharacteristicNotification(write_charact, true);
 			}
 		}
 	}
@@ -508,19 +549,24 @@ public class BlueService extends Service {
 	 * @param characteristic
 	 * @return 返回指令
 	 */
-	private int parseData(BluetoothGattCharacteristic characteristic) {
+	private String parseData(BluetoothGattCharacteristic characteristic) {
 		byte[] value = characteristic.getValue();
-		String binaryString = Integer.toBinaryString(value[0]);
-		int length = binaryString.length();
-		String x = length > 8 ? binaryString.substring(length - 8, length)
-				: binaryString;
-		int temp = 0;
-		try {
-			temp = Integer.valueOf(x, 2);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return temp;
+        String s = "";
+        for (int i = 0; i <value.length ; i++) {
+            String binaryString = Integer.toBinaryString(value[i]);
+            int length = binaryString.length();
+            String x = length > 8 ? binaryString.substring(length - 8, length)
+                    : binaryString;
+            int temp = 0;
+            try {
+                temp = Integer.valueOf(x, 2);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            s+=temp;
+        }
+
+		return s;
 	};
 
 	/**
@@ -562,5 +608,11 @@ public class BlueService extends Service {
 		}
 		return 0;
 	}
+
+    public interface RequstBtCharacteristic{
+
+        public void getCharacteristic(BluetoothGattCharacteristic characteristic);
+
+    }
 
 }
