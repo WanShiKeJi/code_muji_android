@@ -40,8 +40,6 @@ public class BaseUtil {
 	 */
 	public static List<String> getPinYinNum(String pinyin) {
         List<String> mPynameList=new ArrayList<String>();
-        pinyin=pinyin.toUpperCase();
-        Log.e("pinyin----","===>"+pinyin);
         String pyname=BaseUtil.converterToSpell(pinyin);
         String pynameArray[]=pyname.split(",");
         String TempPynameSum="";
@@ -56,7 +54,6 @@ public class BaseUtil {
                     mPynameList.add(TempPynameSum);
                 }
             }
-           // Log.e("mPynameList------------->","Size:"+mPynameList.get(0));
             TempPynameSum="";
         }
 		return mPynameList;
@@ -442,6 +439,9 @@ public class BaseUtil {
      * @return
      */
     public static String getOperator(String tel){
+        if(tel.length()<7){
+            return "";
+        }
         tel=tel.replace("+86","").substring(0,7).trim();
         if(tel.matches("^1(34[0-8]|(3[5-9]|47|5[0-2]|57[124]|5[89]|8[2378])\\d)\\d{3}$")){
             return "移动";
@@ -451,5 +451,24 @@ public class BaseUtil {
             return "电信";
         }
         return "";
+    }
+
+    /**
+     * 字符串转换unicode
+     */
+    public static String string2Unicode(String string) {
+
+        StringBuffer unicode = new StringBuffer();
+
+        for (int i = 0; i < string.length(); i++) {
+
+            // 取出每一个字符
+            char c = string.charAt(i);
+
+            // 转换为unicode
+            unicode.append("\\u" + Integer.toHexString(c));
+        }
+
+        return unicode.toString();
     }
 }

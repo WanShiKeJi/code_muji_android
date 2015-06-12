@@ -37,19 +37,19 @@ public class SampleGattAttributes {
     public static String CLIENT_CHARACTERISTIC_CONFIG = "00002902-0000-1000-8000-00805f9b34fb";
 
     // 通知特性
-    public static String CHARACT_NOTIFY = "0000ffe2-0000-1000-8000-00805f9b34fb";
+    public static String CHARACT_NOTIFY = "000034e1-0000-1000-8000-00805f9b34fb";
     // 通知服务
-    public static String SERVICE_NOTIFY = "0000ffe5-0000-1000-8000-00805f9b34fb";
+    public static String SERVICE_NOTIFY = "000056ef-0000-1000-8000-00805f9b34fb";
     // 通知介绍
     public static String DESCRIPTION_NOTIFY = "00002902-0000-1000-8000-00805f9b34fb";
     // 写入特性
-    public static String SERVICE_WRITE = "0000ffe5-0000-1000-8000-00805f9b34fb";
+    public static String SERVICE_WRITE = "000056ef-0000-1000-8000-00805f9b34fb";
     // 写入服务
-    public static String CHARACT_WRITE = "0000ffe9-0000-1000-8000-00805f9b34fb";
+    public static String CHARACT_WRITE = "000034e2-0000-1000-8000-00805f9b34fb";
     /**
      * 设备的UUID，更换此ID就可以和指定的设备连接
      */
-    public static String GOD_1 = "00000524-0000-1000-8000-00805f9b34fb"; // 战神设备1
+    public static String GOD_1 = "158fc022-5cdc-4d08-9f16-33673dc2255c"; // 战神设备1
     public static String GOD_2 = "00000524-0000-1000-8000-00805f9b34fb"; // 战神设备2
     public static String GOD_3 = "00000524-0000-1000-8000-00805f9b34fb"; // 战神设备3
 

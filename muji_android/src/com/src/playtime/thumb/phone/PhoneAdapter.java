@@ -82,11 +82,10 @@ public class PhoneAdapter extends CAdapter<ContactModel> implements
 	 * @return
 	 */
 	public SpannableStringBuilder setSpecifiedTextsColor(ContactModel model) {
-		String tempStr = model.getName();
-		SpannableStringBuilder style = new SpannableStringBuilder(tempStr
-				+ "---" + model.group);
+		String tempStr = model.getName().replace(" ","");
+		SpannableStringBuilder style = new SpannableStringBuilder(tempStr);
 		// 如果没有相同的字符就直接返回不带颜色的style
-		if (model.group.equals("")) {
+		if (model.group.equals("")||inspection.equals("")) {
 			return style;
 		}
         String group="";
@@ -96,21 +95,18 @@ public class PhoneAdapter extends CAdapter<ContactModel> implements
                 group=group+model.group.charAt(i+1);
             }
         }
+        Pattern pattern = Pattern.compile(group,Pattern.CASE_INSENSITIVE);
         for (int i = 0; i <model.getPynameList().size() ; i++) {
             for (int j = 0; j <model.getPynameList().get(i).length() ; j++) {
                 if(model.getPynameList().get(i).charAt(j)=='-'){
                     pygroup=pygroup+model.getPynameList().get(i).charAt(j+1);
-                    //Log.e("group","======>"+group+"=====>"+pygroup);
                     }
                 }
-            Pattern pattern = Pattern.compile(group,Pattern.CASE_INSENSITIVE);
             Matcher matcher = pattern.matcher(pygroup);
             boolean flag = matcher.find();
             if (flag) {
                 int startIdx = matcher.start();
                 int endIdx = matcher.end();
-                //Log.e("==========>",pygroup+"--"+group+"--start--"+startIdx+"--end--"+endIdx);
-                // 从开始位置到结束位置上色
                 style.setSpan(new ForegroundColorSpan(Color.RED), startIdx, endIdx,
                         Spannable.SPAN_EXCLUSIVE_INCLUSIVE);
                 return  style;

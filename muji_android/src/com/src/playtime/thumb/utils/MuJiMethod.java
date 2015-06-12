@@ -1,5 +1,6 @@
 package com.src.playtime.thumb.utils;
 
+import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.Collections;
 
@@ -29,7 +30,7 @@ import android.widget.Toast;
  */
 public class MuJiMethod {
 
-	private static MuJiMethod mMuJi;
+    private static MuJiMethod mMuJi;
 
 	private MyApplication mApp;
 
@@ -197,5 +198,101 @@ public class MuJiMethod {
 	public int msgOut() {
 		return 0;
 	}
+
+    /**
+     * 发送电话数据到蓝牙
+     * @param phone
+     *        电话
+     * @param type
+     *        类型
+     */
+    public void sendBTPhoneData(String phone,byte type) {
+        byte bytes[] = new byte[20];
+        boolean isWhile=true;
+        //前四位为包头
+        bytes[0] = 0x5A;
+        bytes[1] = 0x19;
+        bytes[2] = 0x00;
+        //短包
+        bytes[3] = 0x12;
+
+        int idx=4;
+        for (int i = 0; i <phone.length();) {
+            String temp;
+            if(i+2<=phone.length()){
+            temp=phone.substring(i,i+2);
+                i=i+2;
+            }else if(i+1==phone.length()){
+            temp=phone.substring(i,i+1);
+                i++;
+            }else{
+                temp="";
+                i++;
+            }
+            StringBuffer sb=new StringBuffer();
+            for (int j = 0; j <temp.length() ; j++) {
+                switch (temp.charAt(j)){
+                    case '*':
+                        sb.append("E");
+                        break;
+                    case '#':
+                        sb.append("D");
+                        break;
+                    case '+':
+                        sb.append("A");
+                        break;
+                    default:
+                        sb.append(temp.charAt(j));
+                        break;
+                }
+            }
+           // if(sb.toString().equals("00")){
+                bytes[idx]=(byte)Integer.parseInt(sb.toString(),16);
+           // }
+
+            idx++;
+        }
+
+        for (int i = 4; i <bytes.length ; i++) {
+            Log.e("bytes---->","---"+bytes[i]);
+        }
+       // mApp.mBlueManage.mBlueServer.sendOrder(bytes);
+    }
+
+    /**
+     * 发送短信数据到蓝牙
+     * @param str
+     *        数据
+     */
+    public void sendBTSmsData(String str) {
+        byte bytes[] = new byte[20];
+        byte[] b = new byte[0];
+        for (int i = 0; i <bytes.length ; i++) {
+            bytes[i]=0x00;
+        }
+        try {
+            b = str.getBytes("unicode");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        for (int i = 0; i < b.length; i++) {
+            bytes[4 + i] = b[i];
+            //   }
+        }
+        //前四位为包头
+        bytes[0] = 0x5A;
+        bytes[1] = 0x19;
+        bytes[2] = 0x00;
+        //长包
+        bytes[3] = (byte) 0xFF;
+        bytes[4]=0x00;
+        bytes[5]=0x00;
+        bytes[6]=0x00;
+        bytes[7]= (byte) b.length;
+        bytes[8]= 0x10;
+        bytes[9]= 0x24;
+
+        mApp.mBlueManage.mBlueServer.sendOrder(bytes);
+    }
 
 }

@@ -19,6 +19,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -36,6 +37,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ab.util.AbViewUtil;
+import com.avos.avoscloud.AVUser;
 import com.baoyz.swipemenulistview.SwipeMenu;
 import com.baoyz.swipemenulistview.SwipeMenuCreator;
 import com.baoyz.swipemenulistview.SwipeMenuItem;
@@ -120,24 +122,24 @@ public class PhoneFragment extends BaseFragment {
 		SwipeMenuCreator creator = new SwipeMenuCreator() {
 			@Override
 			public void create(SwipeMenu menu) {
-				// create "delete" item
+				// 建一个删除item
 				SwipeMenuItem deleteItem = new SwipeMenuItem(mAct);
-				// set item background
+				// 设置item的背景
 				deleteItem.setBackground(new ColorDrawable(Color.rgb(0xF9,
 						0x3F, 0x25)));
-				// set item width
+				// 设置item的宽
 				deleteItem.setWidth(AbViewUtil.dip2px(mAct, 90));
-				// set a icon
+				// 设置一个图标
 				deleteItem.setIcon(R.drawable.ic_delete);
-				// add to menu
+				// 添加一个菜单
 				menu.addMenuItem(deleteItem);
 			}
 		};
 
-		// set creator
+		// 把creator设置进listview里
 		mListView.setMenuCreator(creator);
 
-		// step 2. listener item click event
+		// 设置监听item
 		mListView.setOnMenuItemClickListener(new OnMenuItemClickListener() {
 			@Override
 			public boolean onMenuItemClick(int position, SwipeMenu menu,
@@ -193,30 +195,33 @@ public class PhoneFragment extends BaseFragment {
     }
 
     public void isConfigDialog(){
-        String email=getSharedPreferences("muji").getString("email","");
-        final String phone=getSharedPreferences("muji").getString("phone","");
-        if(email.equals("")||phone.equals("")){
-            GoDisConverDialog();
-        }else{
-            String title="";
-            if(this.getSharedPreferences("muji").getBoolean("isTransfer",false)){
-                title="到拇机"+phone+"的呼转取消?";
+        AVUser currentUser=AVUser.getCurrentUser();
+        if(currentUser!=null){
+            if(TextUtils.isEmpty(currentUser.getString("mujiphone"))){
+                GoDisConverDialog();
             }else{
-                title="手机呼转到拇机"+phone+"?";
+                String title="";
+                final String phone=currentUser.getString("mujiphone");
+                if(this.getSharedPreferences("muji").getBoolean("isTransfer",false)){
+                    title="到拇机"+phone+"的呼转取消?";
+                }else{
+                    title="手机呼转到拇机"+phone+"?";
+                }
+                showDialog("",title,"OK",new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        callTransfer(phone);
+                    }
+                },"不OK",new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                },true,false);
             }
-            showDialog("",title,"是",new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    callTransfer(phone);
-                }
-            },"否",new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.dismiss();
-                }
-            },true,false);
+        }else{
+            GoDisConverDialog();
         }
-
     }
 
     public void GoDisConverDialog(){
@@ -228,8 +233,8 @@ public class PhoneFragment extends BaseFragment {
         Ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mRbList[3].setChecked(true);
-                mRbList[0].setChecked(false);
+                /**手动触发按钮事件*/
+                mRbList[3].performClick();
                 mConfigDialog.dismiss();
             }
         });

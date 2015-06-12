@@ -123,6 +123,9 @@ public class ContactsFragment extends BaseFragment implements TextWatcher,
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==UPDATE_CONTACTS){
+
+
 		List<ContactModel> mContactDatas = new ArrayList<ContactModel>();
 		// 读取系统数据库里的联系人信息
 		Cursor cursor = mAct.getContentResolver().query(Phone.CONTENT_URI,
@@ -150,13 +153,13 @@ public class ContactsFragment extends BaseFragment implements TextWatcher,
 		mApp.mContactDatas.addAll(PinyinComparator.sort(mContactDatas));
 		// 刷新数据
 		mAdapter.refresh(mApp.mContactDatas, "");
-
+        }
 	}
 
 	@Override
 	public void onResume() {
 		super.onResume();
-		this.onActivityResult(0, 0, null);
+		//this.onActivityResult(0, 0, null);
 	}
 
 	@Override
@@ -171,12 +174,14 @@ public class ContactsFragment extends BaseFragment implements TextWatcher,
 		if (TextUtils.isEmpty(s)) {
 			mAdapter.refresh(mApp.mContactDatas, s.toString());
 			mHeaderTvClear.setVisibility(View.GONE);
+            mContactsManage.refreshHeaderCharData(mApp.mContactDatas);
 		} else {
 			mHeaderTvClear.setVisibility(View.VISIBLE);
 			// search(s.toString());
 			List<ContactModel> temp = PinyinSearch.FindPinyin(s.toString(),
 					mApp.mContactDatas, false);
-			mAdapter.refresh(temp, s.toString());
+			mAdapter.refresh(temp, "");
+            mContactsManage.refreshHeaderCharData(temp);
 		}
 
 	}

@@ -1,6 +1,7 @@
 package com.src.playtime.thumb.discover;
 
 import android.app.AlertDialog;
+import android.bluetooth.BluetoothGattCharacteristic;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -21,7 +22,9 @@ import com.src.playtime.thumb.R;
 import com.src.playtime.thumb.blueService.BlueService;
 import com.src.playtime.thumb.blueService.BlueServiceManage;
 import com.src.playtime.thumb.login.LoginActivity;
+import com.src.playtime.thumb.utils.BaseUtil;
 import com.src.playtime.thumb.widget.GifMovieView;
+import com.waitingfy.callhelper.GetLocationByNumber;
 
 public class DiscoverFragment extends BaseFragment {
     //手机号码
@@ -45,6 +48,9 @@ public class DiscoverFragment extends BaseFragment {
     //拇机配置按钮
     @ViewInject(R.id.tv_discover_config)
     private TextView mTvConfig;
+    //拇机运营商
+    @ViewInject(R.id.tv_discover_operators)
+    private TextView mTvOperators;
 
 	private View view;
     //用户缓存
@@ -74,9 +80,11 @@ public class DiscoverFragment extends BaseFragment {
             if(!TextUtils.isEmpty(mTvMjPhone.getText().toString())){
                 mGifBase.setBackgroundResource(R.color.transparent);
                 mGifBase.setMovieResource(R.drawable.gif_base);
-                mGifBle.setMovieResource(R.drawable.gif_ble);
+               // mGifBle.setBackgroundResource(R.color.transparent);
+                //mGifBle.setMovieResource(R.drawable.gif_ble);
                 mTvConfig.setBackgroundResource(R.drawable.icon_discover_bgred);
                 mTvConfig.setText("修改");
+                mTvOperators.setText(GetLocationByNumber.getCallerInfo(mTvMjPhone.getText().toString(),mAct)+" "+BaseUtil.getOperator(mTvMjPhone.getText().toString()));
             }
             mTvLogin.setText("退出");
             mTvLogin.setBackgroundResource(R.drawable.icon_discover_bgred);
@@ -93,7 +101,7 @@ public class DiscoverFragment extends BaseFragment {
     }
 
     @Override
-    @OnClick({R.id.tv_discover_login,R.id.tv_discover_config,R.id.tv_discover_ble})
+    @OnClick({R.id.tv_discover_login,R.id.tv_discover_config,R.id.tv_discover_ble,R.id.ll_discover_rom})
     public void onClick(View v) {
         super.onClick(v);
         switch(v.getId()){
@@ -122,7 +130,7 @@ public class DiscoverFragment extends BaseFragment {
                   }else {
                       showBleDialog();
                   }
-//                BlueServiceManage.getBlueServerManage(mAct).mBlueServer.initDevice();
+                BlueServiceManage.getBlueServerManage(mAct).mBlueServer.initDevice();
                 break;
             case R.id.tv_config_confirm:
                 putConfigShared();
@@ -136,10 +144,29 @@ public class DiscoverFragment extends BaseFragment {
                     mTvBle.setText("解绑");
                     mTvBle.setBackgroundResource(R.drawable.icon_discover_bgred);
                     mGifBle.setBackgroundResource(R.color.transparent);
-                    mGifBase.setMovieResource(R.drawable.gif_base);
+                    if(!TextUtils.isEmpty(mTvMjPhone.getText())){
+                        mGifBase.setBackgroundResource(R.color.transparent);
+                        mGifBase.setMovieResource(R.drawable.gif_base);
+                    }
                     mGifBle.setMovieResource(R.drawable.gif_ble);
                 }
                 mConfigDialog.dismiss();
+                break;
+            case R.id.ll_discover_rom:
+                showToast("点击了!");
+                byte bytes[]=new byte[20];
+                for (int i = 0; i <bytes.length; i++) {
+                    bytes[i]=0x00;
+                }
+                bytes[0]=0x5A;
+                bytes[1]=0x10;
+                bytes[2]=0x00;
+                mApp.mBlueManage.mBlueServer.sendOrder(bytes,new BlueService.RequstBtCharacteristic() {
+                    @Override
+                    public void getCharacteristic(BluetoothGattCharacteristic characteristic) {
+
+                    }
+                });
                 break;
         }
     }

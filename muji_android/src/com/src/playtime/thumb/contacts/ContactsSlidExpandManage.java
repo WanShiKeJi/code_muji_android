@@ -1,5 +1,6 @@
 package com.src.playtime.thumb.contacts;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
@@ -36,6 +37,7 @@ public class ContactsSlidExpandManage implements SlidExpandManage {
 		this.mContext = context;
 		mInflater = LayoutInflater.from(mContext);
 		mApp = (MyApplication) context.getApplicationContext();
+        mContactDatas=new ArrayList<ContactModel>();
 	}
 
 	@Override
@@ -51,24 +53,40 @@ public class ContactsSlidExpandManage implements SlidExpandManage {
 			holder = (HeaderViewHolder) convertView.getTag();
 		}
 
+        CharSequence headerChar="";
 		// set header text as first char in name
-		CharSequence headerChar = mApp.mContactDatas.get(position).getPyname().subSequence(
-				0, 1);
+        if(mContactDatas.isEmpty()){
+             headerChar = mApp.mContactDatas.get(position).getPyname().subSequence(
+                    0, 1);
+        }else {
+             headerChar = mContactDatas.get(position).getPyname().subSequence(
+                    0, 1);
+        }
 		holder.text.setText(headerChar);
-
 		return convertView;
 	}
 
 	@Override
 	public long getHeaderId(int position) {
 		// TODO Auto-generated method stub
-		return mApp.mContactDatas.get(position).getPyname().toLowerCase().subSequence(0, 1)
-				.charAt(0);
+        if(mContactDatas.isEmpty()){
+            return mApp.mContactDatas.get(position).getPyname().toLowerCase().subSequence(0, 1)
+                    .charAt(0);
+        }else{
+            return mContactDatas.get(position).getPyname().toLowerCase().subSequence(0, 1)
+                    .charAt(0);
+        }
+
 	}
 
 	class HeaderViewHolder {
 		TextView text;
 	}
+
+
+    public void refreshHeaderCharData(List<ContactModel> data){
+        this.mContactDatas=data;
+    }
 
 	//
 	// class ViewHolder {
